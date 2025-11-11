@@ -64,3 +64,23 @@
 - [x] Criar card "Dual Capital Strategy" mostrando total R$ 23.2M (VASP R$ 14M + IP R$ 9.2M)
 - [ ] Atualizar capital injection timeline para refletir ambas as entidades
 - [x] Adicionar quick links para /vasp e /ip no dashboard principal
+
+## Complete Restructure (Nov 11 - Final)
+
+- [x] Ler e aplicar brand guidelines Coins.xyz (cores, tipografia, elementos visuais GenZ)
+- [x] Redesign homepage: apenas tópicos comuns (reestruturação Joffre Asia, capital injection combinado, team updates)
+- [x] Atualizar hero para mencionar dual-license strategy (VASP + EMI), não só VASP
+- [x] Remover "part-time engagement" do milestone Bitso controller
+- [x] Adicionar reconhecimento Daniel Hott + possível intern hire
+- [x] Criar análise completa VASP em /vasp (Coins.xyz Digital Markets)
+- [x] Criar análise completa EMI em /ip (Coins.xyz Global Trading)
+- [x] Mover Regulatory Framework para página dedicada /regulations com links oficiais BCB
+- [x] Garantir separação clara: VASP content apenas em /vasp, EMI content apenas em /ip
+- [ ] Aplicar design GenZ: cores vibrantes, tipografia moderna, elementos dinâmicos
+
+## Latest Request (IP Schedule Integration)
+
+- [x] Incorporar cronograma detalhado de autorização IP (CSV) na página /ip
+- [x] Adicionar visualização de fases (Phase 0, 1, 2, 3) com milestones
+- [x] Destacar itens bloqueadores (CNPJ Joffre Asia, Business Plan, External Audit)
+- [x] Mostrar deadline crítico: April 30, 2026 (BACEN Protocol)

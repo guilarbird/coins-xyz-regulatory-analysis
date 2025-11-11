@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import VaspAnalysis from "./pages/VaspAnalysis";
 import IpAnalysis from "./pages/IpAnalysis";
+import Regulations from "./pages/Regulations";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/vasp"} component={VaspAnalysis} />
       <Route path={"/ip"} component={IpAnalysis} />
+      <Route path={"/regulations"} component={Regulations} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
