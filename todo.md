@@ -122,3 +122,11 @@
 - [x] Review coinsxyz_brandguidelines_17.pdf for official color palette
 - [x] Replace all non-brand colors with official Coins.xyz colors only
 - [x] Ensure no gray, yellow, orange, or other off-brand colors are used
+
+## Capital Injection Timeline (Nov 11, 2025)
+
+- [x] Add detailed capital injection timeline showing specific dates for each injection
+- [x] Include milestones: Q4 2025, Q2 2026, Q4 2026, Q1 2028
+- [x] Show amount per injection phase
+- [x] Add visual progress indicators for each phase
+- [x] Link capital injections to regulatory milestones (audit, filing, compliance)
