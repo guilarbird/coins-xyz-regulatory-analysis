@@ -131,7 +131,7 @@ export default function VaspAnalysis() {
       </section>
 
       {/* Main Content */}
-      <section className="py-12">
+      <section className="py-12 bg-gradient-to-br from-blue-50 to-white">
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
             <TabsList className="grid w-full grid-cols-4 bg-white border">

@@ -130,3 +130,15 @@
 - [x] Show amount per injection phase
 - [x] Add visual progress indicators for each phase
 - [x] Link capital injections to regulatory milestones (audit, filing, compliance)
+
+## Mobile Readability & Sizing Fixes (Nov 11, 2025)
+
+- [x] Fix white background readability issues on VASP page
+- [x] Fix white background readability issues on Capital Injection Timeline
+- [ ] Fix white background readability issues on Critical Path Milestones
+- [x] Add colored backgrounds to all detail pages for better contrast
+- [ ] Ensure text is readable on all backgrounds (WCAG AA compliance)
+- [ ] Test mobile sizing and responsiveness on all pages
+- [x] Fix Capital Injection Timeline summary layout (ugly on mobile)
+- [x] Redesign timeline summary section for better mobile readability
+- [x] Ensure all text is visible and not cut off

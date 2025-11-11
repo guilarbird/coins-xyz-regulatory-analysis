@@ -412,14 +412,14 @@ export default function Home() {
 
               {/* Total Summary */}
               <div className="mt-6 pt-6 border-t-2 border-purple-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Total Capital Injection</p>
-                    <p className="text-2xl font-bold text-purple-600 font-display">{formatCurrency(23200000)}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-purple-50 rounded-lg p-4">
+                    <p className="text-sm text-gray-600 mb-1">Total Capital Injection</p>
+                    <p className="text-3xl font-bold text-purple-600 font-display">{formatCurrency(23200000)}</p>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-600">Timeline</p>
-                    <p className="text-lg font-semibold text-gray-900">Q4 2025 → Q1 2028</p>
+                  <div className="bg-purple-50 rounded-lg p-4">
+                    <p className="text-sm text-gray-600 mb-1">Timeline</p>
+                    <p className="text-2xl font-semibold text-gray-900 font-display">Q4 2025 → Q1 2028</p>
                   </div>
                 </div>
               </div>
