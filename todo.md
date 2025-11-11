@@ -9,3 +9,11 @@
 - [x] Adicionar cronograma visual de adequação
 - [x] Implementar design responsivo
 - [x] Testar navegação e interações
+
+## New Requirements
+
+- [x] Traduzir todo o conteúdo para inglês
+- [x] Adicionar conversor de moeda BRL/USD
+- [x] Criar gráfico interativo de cronograma de capital
+- [x] Fazer distinção clara entre Capital Contribution, Idle Capital e Available Capital
+- [x] Substituir passarinho pelos logos oficiais da Coins.xyz
