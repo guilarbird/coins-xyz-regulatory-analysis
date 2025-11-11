@@ -37,3 +37,8 @@
 ## UI Improvements
 
 - [x] Converter consultas públicas para formato accordion compacto (igual às resoluções)
+
+## Footer Improvements
+
+- [x] Adicionar proteção de copyright no footer
+- [x] Implementar feed ao vivo de taxa de câmbio USD/BRL

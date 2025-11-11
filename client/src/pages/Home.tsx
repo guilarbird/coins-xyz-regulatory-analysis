@@ -4,13 +4,43 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Calculator, TrendingUp, Calendar, Info, DollarSign, Wallet, PiggyBank, Coins, AlertCircle, FileText, Lightbulb, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, LineChart, Line } from 'recharts';
-
-const BRL_TO_USD = 0.20; // Approximate exchange rate
 
 export default function Home() {
   const [currency, setCurrency] = useState<'BRL' | 'USD'>('BRL');
+  const [exchangeRate, setExchangeRate] = useState<number>(5.00); // Default fallback
+  const [lastUpdated, setLastUpdated] = useState<string>("");
+  
+  const BRL_TO_USD = 1 / exchangeRate;
+  
+  // Fetch live exchange rate
+  useEffect(() => {
+    const fetchExchangeRate = async () => {
+      try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        if (data.rates && data.rates.BRL) {
+          setExchangeRate(data.rates.BRL);
+          setLastUpdated(new Date().toLocaleString('en-US', { 
+            month: 'long', 
+            day: 'numeric', 
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          }));
+        }
+      } catch (error) {
+        console.error('Failed to fetch exchange rate:', error);
+        // Keep default fallback rate
+      }
+    };
+    
+    fetchExchangeRate();
+    // Refresh every 30 minutes
+    const interval = setInterval(fetchExchangeRate, 30 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
   const [btcAmount, setBtcAmount] = useState("");
   const [usdcAmount, setUsdcAmount] = useState("");
   const [brzAmount, setBrzAmount] = useState("");
@@ -886,8 +916,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mt-6 pt-6 border-t border-gray-800 text-center text-xs text-gray-400">
-            <p>November 11, 2025 • Exchange rate: 1 USD = {(1/BRL_TO_USD).toFixed(2)} BRL (approximate)</p>
+          <div className="mt-6 pt-6 border-t border-gray-800 text-center text-xs text-gray-400 space-y-2">
+            <p>
+              {lastUpdated ? `Last updated: ${lastUpdated}` : 'November 11, 2025'} • 
+              Live exchange rate: 1 USD = {exchangeRate.toFixed(2)} BRL
+            </p>
+            <p>© {new Date().getFullYear()} Coins.xyz. All rights reserved. This analysis is for informational purposes only and does not constitute legal or financial advice.</p>
           </div>
         </div>
       </footer>
