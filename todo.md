@@ -17,3 +17,12 @@
 - [x] Criar gráfico interativo de cronograma de capital
 - [x] Fazer distinção clara entre Capital Contribution, Idle Capital e Available Capital
 - [x] Substituir passarinho pelos logos oficiais da Coins.xyz
+
+## Additional Requirements
+
+- [x] Adicionar seção com mapa/timeline da regulação e surpresa do Banco Central
+- [x] Ajustar dimensões da logo (reduzir tamanho)
+- [x] Remover "Analysis prepared by Manus AI" do footer
+- [x] Listar consultas públicas em aberto (CP 109, 110, 111, 126, 119, 117)
+- [x] Tornar a página mais navegacional com menu interno
+- [x] Condensar conteúdo usando accordions/toggles para melhor navegação
