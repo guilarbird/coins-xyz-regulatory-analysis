@@ -42,3 +42,25 @@
 
 - [x] Adicionar proteção de copyright no footer
 - [x] Implementar feed ao vivo de taxa de câmbio USD/BRL
+
+## Executive Dashboard Transformation
+
+- [ ] Transformar homepage em Central de Updates Executivos
+- [ ] Adicionar roadmap visual integrado (Joffre Asia + BCB compliance até 2028)
+- [ ] Criar seção Key Takeaways no topo (3-4 bullets principais)
+- [ ] Implementar rota /vasp com análise específica de VASP
+- [ ] Implementar rota /ip com análise específica de Payment Institution
+- [ ] Adicionar FAQ de riscos operacionais
+- [ ] Incluir análise de impacto competitivo (VASPs compliant, oportunidades)
+- [ ] Consolidar framework regulatório em accordion único
+- [ ] Remover redundâncias de UI
+- [ ] Otimizar navegação para senior scan rápido
+
+## Latest Updates (Nov 11, 2025)
+
+- [x] Adicionar seção "Current Blockers & Milestones" destacando business plan e external audit
+- [x] Incluir milestone: Bitso controller joining Nov 17
+- [ ] Adicionar seção "Compliance Readiness" com internal training initiatives
+- [x] Criar card "Dual Capital Strategy" mostrando total R$ 23.2M (VASP R$ 14M + IP R$ 9.2M)
+- [ ] Atualizar capital injection timeline para refletir ambas as entidades
+- [x] Adicionar quick links para /vasp e /ip no dashboard principal

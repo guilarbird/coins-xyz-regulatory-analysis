@@ -5,11 +5,15 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import VaspAnalysis from "./pages/VaspAnalysis";
+import IpAnalysis from "./pages/IpAnalysis";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/vasp"} component={VaspAnalysis} />
+      <Route path={"/ip"} component={IpAnalysis} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

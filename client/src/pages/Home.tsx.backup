@@ -3,9 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calculator, TrendingUp, Calendar, Info, DollarSign, Wallet, PiggyBank, Coins, AlertCircle, FileText, Lightbulb, ChevronDown, ArrowRight, CheckCircle2, Clock } from "lucide-react";
+import { Calculator, TrendingUp, Calendar, Info, DollarSign, Wallet, PiggyBank, Coins, AlertCircle, FileText, Lightbulb, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, LineChart, Line } from 'recharts';
 
 export default function Home() {
@@ -184,10 +183,10 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-3">
-              Executive Dashboard<br/>Brazil Regulatory Compliance
+              Virtual Asset Brokerage<br/>Capital Requirements
             </h1>
             <p className="text-lg text-blue-50 mb-6">
-              Joffre Ortigas Asia Holdings • Coins.xyz Digital Markets & Global Trading
+              Comprehensive analysis of regulatory capital needed to operate as a VASP in Brazil
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Card className="bg-white/10 backdrop-blur border-white/20">
@@ -209,129 +208,6 @@ export default function Home() {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Takeaways & Quick Access */}
-      <section className="py-10 bg-white border-b">
-        <div className="container max-w-6xl">
-          <div className="flex items-center gap-2 mb-6">
-            <TrendingUp className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold">Key Takeaways</h2>
-          </div>
-          
-          {/* Dual Capital Strategy */}
-          <Card className="mb-6 border-2 border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Coins className="w-5 h-5 text-purple-600" />
-                Dual-License Capital Strategy
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div>
-                  <p className="text-sm text-gray-600 mb-1">VASP (Digital Markets)</p>
-                  <p className="text-2xl font-bold text-blue-600">{formatCurrency(14000000)}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 mb-1">Payment Institution (Global Trading)</p>
-                  <p className="text-2xl font-bold text-green-600">{formatCurrency(9200000)}</p>
-                </div>
-                <div className="bg-white/60 rounded-lg p-3">
-                  <p className="text-sm text-gray-600 mb-1">Total Capital Required</p>
-                  <p className="text-3xl font-bold text-purple-600">{formatCurrency(23200000)}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Current Blockers */}
-          <Card className="mb-6 border-2 border-red-200 bg-red-50">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-red-600" />
-                Current Blockers & Critical Path
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4 text-sm">
-                <div className="space-y-2">
-                  <div className="flex items-start gap-2">
-                    <Clock className="w-4 h-4 text-red-600 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Business Plan Preparation</p>
-                      <p className="text-gray-600">Aligned with BCB requirements for VASP & IP authorization</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Clock className="w-4 h-4 text-red-600 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-gray-900">External Audit</p>
-                      <p className="text-gray-600">Capital verification before authorization filing</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Capital Injection: In Progress</p>
-                      <p className="text-gray-600">Covering both Digital Markets (VASP) and Global Trading (IP)</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Calendar className="w-4 h-4 text-blue-600 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Nov 17: Bitso Controller Joins</p>
-                      <p className="text-gray-600">Part-time engagement to support compliance readiness</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Quick Links */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <Link href="/vasp">
-              <a className="block">
-                <Card className="border-2 border-blue-200 hover:border-blue-400 transition-colors cursor-pointer h-full">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between">
-                      <span className="flex items-center gap-2">
-                        <FileText className="w-5 h-5 text-blue-600" />
-                        VASP Analysis
-                      </span>
-                      <ArrowRight className="w-5 h-5 text-blue-600" />
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-gray-600">Coins.xyz Digital Markets Ltda. — Virtual Asset Service Provider authorization, capital requirements, and compliance checklist</p>
-                  </CardContent>
-                </Card>
-              </a>
-            </Link>
-
-            <Link href="/ip">
-              <a className="block">
-                <Card className="border-2 border-green-200 hover:border-green-400 transition-colors cursor-pointer h-full">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between">
-                      <span className="flex items-center gap-2">
-                        <FileText className="w-5 h-5 text-green-600" />
-                        Payment Institution Analysis
-                      </span>
-                      <ArrowRight className="w-5 h-5 text-green-600" />
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-gray-600">Coins.xyz Global Trading Participações Ltda. — Electronic Money Institution (EMI) authorization and capital structure</p>
-                  </CardContent>
-                </Card>
-              </a>
-            </Link>
           </div>
         </div>
       </section>
