@@ -756,82 +756,106 @@ export default function Home() {
               <AlertCircle className="w-5 h-5 text-orange-600" />
               Ongoing Public Consultations
             </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Card className="border-orange-200">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">CP 109/2024</CardTitle>
-                    <Badge variant="outline" className="text-xs bg-orange-50">Closed</Badge>
+            <Accordion type="single" collapsible className="space-y-2">
+              <AccordionItem value="cp-109" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-orange-600">Closed</Badge>
+                      <span className="font-semibold">CP 109/2024</span>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent className="text-sm">
-                  <p className="text-gray-700 mb-2"><strong>Topic:</strong> VASP operational framework and authorization requirements</p>
-                  <p className="text-xs text-gray-500">Resulted in Resolutions 519 & 520 published Nov 10, 2025</p>
-                </CardContent>
-              </Card>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> VASP operational framework and authorization requirements</p>
+                    <p className="text-xs text-gray-500">Resulted in Resolutions 519 & 520 published Nov 10, 2025</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="border-orange-200">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">CP 110/2024</CardTitle>
-                    <Badge variant="outline" className="text-xs bg-orange-50">Closed</Badge>
+              <AccordionItem value="cp-110" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-orange-600">Closed</Badge>
+                      <span className="font-semibold">CP 110/2024</span>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent className="text-sm">
-                  <p className="text-gray-700 mb-2"><strong>Topic:</strong> Authorization of VASPs by Payment Institutions (IPs)</p>
-                  <p className="text-xs text-gray-500">Resulted in regulatory bridge framework in Resolution 520</p>
-                </CardContent>
-              </Card>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Authorization of VASPs by Payment Institutions (IPs) - regulatory bridge framework</p>
+                    <p className="text-xs text-gray-500">Resulted in regulatory bridge framework in Resolution 520</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="border-orange-200">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">CP 111/2024</CardTitle>
-                    <Badge variant="outline" className="text-xs bg-orange-50">Closed</Badge>
+              <AccordionItem value="cp-111" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-orange-600">Closed</Badge>
+                      <span className="font-semibold">CP 111/2024</span>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent className="text-sm">
-                  <p className="text-gray-700 mb-2"><strong>Topic:</strong> Virtual assets in foreign exchange operations</p>
-                  <p className="text-xs text-gray-500">Resulted in Resolution 521 published Nov 10, 2025</p>
-                </CardContent>
-              </Card>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Virtual assets in foreign exchange operations - cross-border transaction rules</p>
+                    <p className="text-xs text-gray-500">Resulted in Resolution 521 published Nov 10, 2025</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="border-yellow-200">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">CP 126/2025</CardTitle>
-                    <Badge variant="outline" className="text-xs bg-yellow-50">Deadline: Dec 31, 2025</Badge>
+              <AccordionItem value="cp-126" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-yellow-600">Deadline: Dec 31, 2025</Badge>
+                      <span className="font-semibold">CP 126/2025</span>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent className="text-sm">
-                  <p className="text-gray-700"><strong>Topic:</strong> Prudential classification of virtual assets and tokens - risk weighting methodology</p>
-                </CardContent>
-              </Card>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Prudential classification of virtual assets and tokens - risk weighting methodology</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="border-yellow-200">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">CP 119/2025</CardTitle>
-                    <Badge variant="outline" className="text-xs bg-yellow-50">Deadline: May 31, 2026</Badge>
+              <AccordionItem value="cp-119" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-yellow-600">Deadline: May 31, 2026</Badge>
+                      <span className="font-semibold">CP 119/2025</span>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent className="text-sm">
-                  <p className="text-gray-700"><strong>Topic:</strong> Sustainability accounting standards for financial institutions including VASPs</p>
-                </CardContent>
-              </Card>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Sustainability accounting standards for financial institutions including VASPs</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="border-yellow-200">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">CP 117/2025</CardTitle>
-                    <Badge variant="outline" className="text-xs bg-yellow-50">Deadline: May 31, 2026</Badge>
+              <AccordionItem value="cp-117" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-yellow-600">Deadline: May 31, 2026</Badge>
+                      <span className="font-semibold">CP 117/2025</span>
+                    </div>
                   </div>
-                </CardHeader>
-                <CardContent className="text-sm">
-                  <p className="text-gray-700"><strong>Topic:</strong> Naming and denomination rules for financial institutions - brand compliance requirements</p>
-                </CardContent>
-              </Card>
-            </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Naming and denomination rules for financial institutions - brand compliance requirements</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>

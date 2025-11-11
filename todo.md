@@ -33,3 +33,7 @@
 - [x] Consolidar resoluções e consultas públicas em uma única seção "Regulatory Framework"
 - [x] Corrigir datas das consultas públicas (CP 109/110/111 são de 2024)
 - [x] Adicionar resoluções 519, 520, 521 publicadas em 10/11/2025 ao framework regulatório
+
+## UI Improvements
+
+- [x] Converter consultas públicas para formato accordion compacto (igual às resoluções)
