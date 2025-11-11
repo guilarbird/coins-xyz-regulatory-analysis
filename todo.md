@@ -155,3 +155,16 @@
 - [x] Adjust lateral padding and max-width to 100%
 - [x] Optimize mobile responsiveness
 - [x] Check for horizontal overflow or negative margins in grid/flex container
+
+## Dual-Thread Timeline Redesign
+
+- [x] Create TWO parallel threads: Thread A (IP/EMI green), Thread B (VASP blue)
+- [x] Show exact dates in MMM DD, YYYY format (Dec 01, 2025, May 01, 2026, etc.)
+- [x] Currency format: R$ #,##0.0M (e.g., R$ 2.0M, R$ 5.0M, R$ 9.2M)
+- [x] Full-width cards with rounded-2xl, shadow-md, consistent padding
+- [x] Add thin vertical connector per thread
+- [x] Each card shows: date (left), status pill, title, short body, ⚖️ Regulatory cutoff line
+- [x] Thread labels: "Thread A — IP/EMI (EFI)" (green), "Thread B — VASP" (blue)
+- [x] Align card widths consistently
+- [x] Add badges: IP/EMI or VASP
+- [x] Footer with controller info, legend (Blue = VASP, Green = IP/EMI, ⚖️ = Regulatory Deadline), last updated timestamp, FX note

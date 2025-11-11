@@ -54,43 +54,118 @@ export default function Home() {
     }).format(value);
   };
 
-  const milestones: Array<{
+  // Thread A — IP/EMI (EFI) 〔green〕
+  const threadIPEMI: Array<{
     date: string;
     title: string;
-    status: "completed" | "in-progress" | "upcoming" | "planned";
+    status: "in-progress" | "upcoming" | "planned";
     description: string;
+    regulatoryCutoff: string;
+    capital?: string;
+    badge: string;
   }> = [
     {
-      date: "Nov 13, 2025",
-      title: "Joffre Asia CNPJ Registration",
-      status: "in-progress" as const,
-      description: "Formalization as controlling shareholder of Digital Markets & Global Trading"
+      date: "Dec 01, 2025",
+      title: "EFI / Payment Institution Preparation",
+      status: "in-progress",
+      description: "Kick-off of IP authorization with BCB; controller formalization + MCZ coordination; initial capital injection EMI: R$ 2.0M.",
+      regulatoryCutoff: "start dossier before Jan 2026",
+      capital: "R$ 2.0M",
+      badge: "IP/EMI"
     },
     {
-      date: "Nov 17, 2025",
-      title: "Bitso Controller Joins",
-      status: "upcoming" as const,
-      description: "Financial controller from Bitso joining to support compliance readiness"
+      date: "Jan 05, 2026",
+      title: "Business Plan Completion (IP scope)",
+      status: "in-progress",
+      description: "BP finalized for IP; compliance framework ready.",
+      regulatoryCutoff: "BP attached to pre-audit pack",
+      badge: "IP/EMI"
     },
     {
-      date: "Q4 2025",
-      title: "Business Plan Completion",
-      status: "in-progress" as const,
-      description: "Comprehensive business plan aligned with BCB requirements for dual-license strategy"
+      date: "May 01, 2026",
+      title: "Pre-Audit Capital Injection (IP)",
+      status: "upcoming",
+      description: "EMI cumulative: R$ 5.0M (incl. R$ 3.0M in May phase)",
+      regulatoryCutoff: "capital on books for audit start in Jun",
+      capital: "R$ 5.0M",
+      badge: "IP/EMI"
     },
     {
-      date: "Q1 2026",
-      title: "External Audit",
-      status: "upcoming" as const,
-      description: "Capital verification and financial audit before authorization filing"
+      date: "Nov 01, 2026",
+      title: "IP Authorization Filing (EMI/EFI)",
+      status: "planned",
+      description: "EMI total: R$ 9.2M comprovado no filing.",
+      regulatoryCutoff: "full capital evidenced at filing",
+      capital: "R$ 9.2M",
+      badge: "IP/EMI"
     },
     {
-      date: "Nov 2026",
-      title: "VASP & IP Authorization Filing",
-      status: "planned" as const,
-      description: "Submit authorization requests to BCB for both licenses"
+      date: "Jan 15, 2028",
+      title: "Full Compliance (IP)",
+      status: "planned",
+      description: "Operational readiness complete.",
+      regulatoryCutoff: "residual adjustments closed",
+      badge: "IP/EMI"
     }
   ];
+
+  // Thread B — VASP 〔blue〕
+  const threadVASP: Array<{
+    date: string;
+    title: string;
+    status: "in-progress" | "upcoming" | "planned";
+    description: string;
+    regulatoryCutoff: string;
+    capital?: string;
+    badge: string;
+  }> = [
+    {
+      date: "Dec 01, 2025",
+      title: "Initial Capital Injection (VASP)",
+      status: "in-progress",
+      description: "VASP: R$ 3.0M",
+      regulatoryCutoff: "pre-filing capitalization plan initiated",
+      capital: "R$ 3.0M",
+      badge: "VASP"
+    },
+    {
+      date: "May 01, 2026",
+      title: "Pre-Audit Capital Injection (VASP)",
+      status: "upcoming",
+      description: "VASP cumulative: R$ 8.0M (R$ 5.0M na fase de maio)",
+      regulatoryCutoff: "mínimo para auditoria até May 01; janela técnica pode correr até Sep 30, 2026 se auditoria mantida antes do filing",
+      capital: "R$ 8.0M",
+      badge: "VASP"
+    },
+    {
+      date: "Jun 01, 2026",
+      title: "External Audit Window (VASP)",
+      status: "upcoming",
+      description: "Jun 01 – Sep 30, 2026",
+      regulatoryCutoff: "laudo concluído antes do filing",
+      badge: "VASP"
+    },
+    {
+      date: "Nov 01, 2026",
+      title: "VASP Authorization Filing",
+      status: "planned",
+      description: "Submissão ao BCB com laudo e capital exigido.",
+      regulatoryCutoff: "documentação completa na data de filing",
+      badge: "VASP"
+    },
+    {
+      date: "Jan 15, 2028",
+      title: "Full Compliance (VASP)",
+      status: "planned",
+      description: "Requisitos finais atendidos.",
+      regulatoryCutoff: "encerramento de pendências",
+      badge: "VASP"
+    }
+  ];
+
+  const milestones = [...threadIPEMI, ...threadVASP].sort((a, b) => 
+    new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -444,38 +519,159 @@ export default function Home() {
             </CardContent>
           </Card>
           
-          {/* Milestones Timeline */}
-          <Card className="w-full border-2 border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="font-display">Critical Path Milestones</CardTitle>
-              <CardDescription>Key dates and deliverables for dual-license authorization</CardDescription>
-            </CardHeader>
-            <CardContent className="p-4 md:p-6">
-              <div className="space-y-3">
-                {milestones.map((milestone, index) => (
-                  <div key={index} className={`w-full rounded-lg p-4 border-l-4 ${
-                    milestone.status === 'in-progress' ? 'bg-red-50 border-red-500' :
-                    milestone.status === 'upcoming' ? 'bg-blue-100 border-blue-500' :
-                    'bg-gray-50 border-gray-400'
-                  }`}>
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs font-medium text-gray-600">{milestone.date}</p>
-                      <Badge variant="outline" className={`${
-                        milestone.status === 'in-progress' ? 'border-red-500 text-red-700 bg-red-50' :
-                        milestone.status === 'upcoming' ? 'border-blue-500 text-blue-700 bg-blue-50' :
-                        'border-gray-400 text-gray-700 bg-gray-50'
-                      }`}>
-                        {milestone.status === 'in-progress' ? 'In Progress' :
-                         milestone.status === 'upcoming' ? 'Upcoming' : 'Planned'}
-                      </Badge>
-                    </div>
-                    <p className="font-semibold text-gray-900 mb-1">{milestone.title}</p>
-                    <p className="text-sm text-gray-600">{milestone.description}</p>
+          {/* Dual-Thread Timeline */}
+          <div className="w-full">
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold font-display mb-2">Regulatory Timeline</h3>
+              <p className="text-gray-600">Two parallel authorization threads with exact dates and regulatory cutoffs</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Thread A — IP/EMI (EFI) 〔green〕 */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1 h-8 bg-green-500 rounded-full"></div>
+                  <div>
+                    <h4 className="text-lg font-bold font-display text-green-700">Thread A — IP/EMI (EFI)</h4>
+                    <p className="text-xs text-gray-600">Payment Institution Authorization</p>
                   </div>
-                ))}
+                </div>
+
+                <div className="relative space-y-4 pl-4">
+                  {/* Vertical connector */}
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-green-200"></div>
+
+                  {threadIPEMI.map((item, index) => (
+                    <div key={index} className="relative">
+                      {/* Dot connector */}
+                      <div className={`absolute -left-[18px] top-4 w-2 h-2 rounded-full ${
+                        item.status === 'in-progress' ? 'bg-green-600 animate-pulse' :
+                        item.status === 'upcoming' ? 'bg-green-500' :
+                        'bg-green-300'
+                      }`}></div>
+
+                      <div className="bg-white rounded-2xl shadow-md p-6 border-l-4 border-green-500">
+                        <div className="flex items-start justify-between mb-3">
+                          <p className="text-sm font-semibold text-gray-700">{item.date}</p>
+                          <Badge className={`${
+                            item.status === 'in-progress' ? 'bg-green-100 text-green-700 border-green-300' :
+                            item.status === 'upcoming' ? 'bg-green-50 text-green-600 border-green-200' :
+                            'bg-gray-100 text-gray-600 border-gray-300'
+                          } border`}>
+                            {item.status === 'in-progress' ? 'In Progress' :
+                             item.status === 'upcoming' ? 'Upcoming' : 'Planned'}
+                          </Badge>
+                        </div>
+
+                        <div className="mb-3">
+                          <div className="flex items-center gap-2 mb-2">
+                            <h5 className="font-bold text-gray-900">{item.title}</h5>
+                            <Badge className="bg-green-100 text-green-700 text-xs">{item.badge}</Badge>
+                          </div>
+                          {item.capital && (
+                            <p className="text-lg font-bold text-green-600 font-display mb-2">{item.capital}</p>
+                          )}
+                          <p className="text-sm text-gray-600">{item.description}</p>
+                        </div>
+
+                        <div className="flex items-start gap-2 pt-3 border-t border-gray-200">
+                          <Scale className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                          <p className="text-xs text-gray-600"><span className="font-semibold">Regulatory cutoff:</span> {item.regulatoryCutoff}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </CardContent>
-          </Card>
+
+              {/* Thread B — VASP 〔blue〕 */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1 h-8 bg-blue-500 rounded-full"></div>
+                  <div>
+                    <h4 className="text-lg font-bold font-display text-blue-700">Thread B — VASP</h4>
+                    <p className="text-xs text-gray-600">Virtual Asset Service Provider Authorization</p>
+                  </div>
+                </div>
+
+                <div className="relative space-y-4 pl-4">
+                  {/* Vertical connector */}
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-blue-200"></div>
+
+                  {threadVASP.map((item, index) => (
+                    <div key={index} className="relative">
+                      {/* Dot connector */}
+                      <div className={`absolute -left-[18px] top-4 w-2 h-2 rounded-full ${
+                        item.status === 'in-progress' ? 'bg-blue-600 animate-pulse' :
+                        item.status === 'upcoming' ? 'bg-blue-500' :
+                        'bg-blue-300'
+                      }`}></div>
+
+                      <div className="bg-white rounded-2xl shadow-md p-6 border-l-4 border-blue-500">
+                        <div className="flex items-start justify-between mb-3">
+                          <p className="text-sm font-semibold text-gray-700">{item.date}</p>
+                          <Badge className={`${
+                            item.status === 'in-progress' ? 'bg-blue-100 text-blue-700 border-blue-300' :
+                            item.status === 'upcoming' ? 'bg-blue-50 text-blue-600 border-blue-200' :
+                            'bg-gray-100 text-gray-600 border-gray-300'
+                          } border`}>
+                            {item.status === 'in-progress' ? 'In Progress' :
+                             item.status === 'upcoming' ? 'Upcoming' : 'Planned'}
+                          </Badge>
+                        </div>
+
+                        <div className="mb-3">
+                          <div className="flex items-center gap-2 mb-2">
+                            <h5 className="font-bold text-gray-900">{item.title}</h5>
+                            <Badge className="bg-blue-100 text-blue-700 text-xs">{item.badge}</Badge>
+                          </div>
+                          {item.capital && (
+                            <p className="text-lg font-bold text-blue-600 font-display mb-2">{item.capital}</p>
+                          )}
+                          <p className="text-sm text-gray-600">{item.description}</p>
+                        </div>
+
+                        <div className="flex items-start gap-2 pt-3 border-t border-gray-200">
+                          <Scale className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                          <p className="text-xs text-gray-600"><span className="font-semibold">Regulatory cutoff:</span> {item.regulatoryCutoff}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Footer with controller info and legend */}
+            <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className="font-bold text-gray-900 mb-2">Corporate Structure</h5>
+                  <p className="text-sm text-gray-600">Controller: <span className="font-semibold">Joffre Ortigas Asia Holdings</span> → Coins.xyz Digital Markets (VASP) | Coins.xyz Global Trading (EMI)</p>
+                </div>
+                <div>
+                  <h5 className="font-bold text-gray-900 mb-2">Legend</h5>
+                  <div className="flex flex-wrap gap-3 text-xs">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                      <span className="text-gray-600">Blue = VASP</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                      <span className="text-gray-600">Green = IP/EMI</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Scale className="w-3 h-3 text-gray-500" />
+                      <span className="text-gray-600">⚖️ = Regulatory Deadline</span>
+                    </div>
+                  </div>
+                  {lastUpdate && (
+                    <p className="text-xs text-gray-500 mt-2">Last updated: {lastUpdate} | FX: 1 USD = {exchangeRate.toFixed(2)} BRL</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
