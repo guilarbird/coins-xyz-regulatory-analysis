@@ -93,7 +93,7 @@ export default function Home() {
         <div className="container max-w-7xl">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <img src={APP_LOGO} alt="Coins.xyz" className="h-8" />
+              <img src="/CoinsXYZ_HorizontalLogo_BlackWordmark.png" alt="Coins.xyz" className="h-8" />
               <div className="hidden sm:block">
                 <p className="text-xs text-gray-500">Executive Dashboard</p>
               </div>
@@ -519,7 +519,7 @@ export default function Home() {
         <div className="container max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-3">
-              <img src={APP_LOGO} alt="Coins.xyz" className="h-6" />
+              <img src="/CoinsXYZ_HorizontalLogo_WhiteWordmark.png" alt="Coins.xyz" className="h-6" />
               <div className="text-sm text-gray-400">
                 <p>© 2025 Coins.xyz. All rights reserved.</p>
                 <p className="text-xs mt-1">Confidential executive dashboard — For internal use only</p>

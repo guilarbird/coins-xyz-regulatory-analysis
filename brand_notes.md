@@ -5,6 +5,16 @@
 - Use for headlines and key numbers
 - Pair with sans-serif for body text
 
+## Official Color Palette (Exact HEX Codes)
+
+### Primary Colors
+- **Iris (Purple)**: #7A70FF - RGB(122, 112, 255)
+- **Green**: #5DE828 - RGB(93, 232, 40)
+- **Blue**: #0062F5 - RGB(0, 98, 245)
+- **Red**: #ED452D - RGB(237, 69, 45)
+- **Black**: #000000
+- **White**: #FFFFFF
+
 ## Color Palette (Gradients - GenZ Style)
 1. **Iris-Green**: Purple → Blue → Cyan → Green (main hero gradient)
 2. **Iris-Red**: Red → Purple → Blue

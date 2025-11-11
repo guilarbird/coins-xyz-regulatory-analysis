@@ -84,3 +84,11 @@
 - [x] Adicionar visualização de fases (Phase 0, 1, 2, 3) com milestones
 - [x] Destacar itens bloqueadores (CNPJ Joffre Asia, Business Plan, External Audit)
 - [x] Mostrar deadline crítico: April 30, 2026 (BACEN Protocol)
+
+## Branding Updates
+
+- [x] Adicionar logo horizontal Coins.xyz no header de todas as páginas
+- [x] Adicionar logo horizontal Coins.xyz no footer de todas as páginas
+- [x] Ajustar paleta de cores completa para cores oficiais da Coins.xyz
+- [x] Revisar brand guidelines para cores exatas (vermelho, azul, verde, roxo)
+- [x] Adicionar Joffre Ortigas Asia Holdings no topo do diagrama corporativo

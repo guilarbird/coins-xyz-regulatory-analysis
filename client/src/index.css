@@ -191,21 +191,29 @@
     animation: bounce-slow 3s ease-in-out infinite;
   }
   
-  /* Coins.xyz Brand Gradients */
+  /* Coins.xyz Official Brand Colors */
+  :root {
+    --coins-iris: #7A70FF;
+    --coins-green: #5DE828;
+    --coins-blue: #0062F5;
+    --coins-red: #ED452D;
+  }
+  
+  /* Coins.xyz Brand Gradients (Official Colors) */
   .gradient-iris-green {
-    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 25%, #06b6d4 50%, #10b981 100%);
+    background: linear-gradient(135deg, var(--coins-iris) 0%, var(--coins-blue) 33%, #06b6d4 66%, var(--coins-green) 100%);
   }
   
   .gradient-iris-blue {
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #3b82f6 100%);
+    background: linear-gradient(135deg, var(--coins-blue) 0%, var(--coins-iris) 50%, var(--coins-blue) 100%);
   }
   
   .gradient-green-blue {
-    background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
+    background: linear-gradient(135deg, var(--coins-green) 0%, #06b6d4 50%, var(--coins-blue) 100%);
   }
   
   .gradient-red-blue {
-    background: linear-gradient(135deg, #ef4444 0%, #8b5cf6 33%, #3b82f6 66%, #f97316 100%);
+    background: linear-gradient(135deg, var(--coins-red) 0%, var(--coins-iris) 33%, var(--coins-blue) 66%, #f97316 100%);
   }
 
   @media (min-width: 640px) {

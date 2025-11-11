@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowLeft, ExternalLink, FileText, Clock, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
-import { APP_LOGO } from "@/const";
+// Logo handled directly in JSX
 
 export default function Regulations() {
   return (
@@ -20,7 +20,7 @@ export default function Regulations() {
                 </a>
               </Link>
               <div className="h-6 w-px bg-gray-300"></div>
-              <img src={APP_LOGO} alt="Coins.xyz" className="h-7" />
+              <img src="/CoinsXYZ_HorizontalLogo_BlackWordmark.png" alt="Coins.xyz" className="h-7" />
             </div>
           </div>
         </div>

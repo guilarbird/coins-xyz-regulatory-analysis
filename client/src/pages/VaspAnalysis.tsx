@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowLeft, Scale, DollarSign, TrendingUp, Calculator, CheckCircle2, AlertCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { APP_LOGO } from "@/const";
+// Logo handled directly in JSX
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 
 export default function VaspAnalysis() {
@@ -75,7 +75,7 @@ export default function VaspAnalysis() {
                 </a>
               </Link>
               <div className="h-6 w-px bg-gray-300"></div>
-              <img src={APP_LOGO} alt="Coins.xyz" className="h-7" />
+              <img src="/CoinsXYZ_HorizontalLogo_BlackWordmark.png" alt="Coins.xyz" className="h-7" />
             </div>
             
             <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1">
