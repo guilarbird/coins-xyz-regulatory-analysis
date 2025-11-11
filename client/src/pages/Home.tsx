@@ -450,36 +450,27 @@ export default function Home() {
               <CardTitle className="font-display">Critical Path Milestones</CardTitle>
               <CardDescription>Key dates and deliverables for dual-license authorization</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
+            <CardContent className="p-4 md:p-6">
+              <div className="space-y-3">
                 {milestones.map((milestone, index) => (
-                  <div key={index} className="flex gap-4 items-start">
-                    <div className="flex-shrink-0 w-28">
-                      <p className="text-sm font-semibold text-gray-900">{milestone.date}</p>
+                  <div key={index} className={`w-full rounded-lg p-4 border-l-4 ${
+                    milestone.status === 'in-progress' ? 'bg-red-50 border-red-500' :
+                    milestone.status === 'upcoming' ? 'bg-blue-100 border-blue-500' :
+                    'bg-gray-50 border-gray-400'
+                  }`}>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-xs font-medium text-gray-600">{milestone.date}</p>
+                      <Badge variant="outline" className={`${
+                        milestone.status === 'in-progress' ? 'border-red-500 text-red-700 bg-red-50' :
+                        milestone.status === 'upcoming' ? 'border-blue-500 text-blue-700 bg-blue-50' :
+                        'border-gray-400 text-gray-700 bg-gray-50'
+                      }`}>
+                        {milestone.status === 'in-progress' ? 'In Progress' :
+                         milestone.status === 'upcoming' ? 'Upcoming' : 'Planned'}
+                      </Badge>
                     </div>
-                    
-                    <div className="flex-shrink-0">
-                      <div className={`w-3 h-3 rounded-full mt-1 ${
-                        milestone.status === 'in-progress' ? 'bg-red-500 animate-pulse' :
-                        milestone.status === 'upcoming' ? 'bg-blue-500' :
-                        'bg-gray-400'
-                      }`}></div>
-                    </div>
-                    
-                    <div className="flex-1 pb-4 border-l-2 border-gray-200 pl-4 -ml-1.5">
-                      <div className="flex items-center gap-2 mb-1">
-                        <p className="font-semibold text-gray-900">{milestone.title}</p>
-                        <Badge variant="outline" className={
-                          milestone.status === 'in-progress' ? 'border-red-500 text-red-700' :
-                          milestone.status === 'upcoming' ? 'border-blue-500 text-blue-700' :
-                          'border-gray-400 text-gray-700'
-                        }>
-                          {milestone.status === 'in-progress' ? 'In Progress' :
-                           milestone.status === 'upcoming' ? 'Upcoming' : 'Planned'}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-gray-600">{milestone.description}</p>
-                    </div>
+                    <p className="font-semibold text-gray-900 mb-1">{milestone.title}</p>
+                    <p className="text-sm text-gray-600">{milestone.description}</p>
                   </div>
                 ))}
               </div>
