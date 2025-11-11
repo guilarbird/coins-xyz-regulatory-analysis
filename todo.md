@@ -118,3 +118,7 @@
 - [x] Review and apply official brand guidelines gradients from coinsxyz_brandguidelines_24.pdf
 - [x] Replace current gradients with approved brand gradient patterns
 - [x] Fix Critical Path Milestones card width to fit full container width
+- [x] Investigate and fix Critical Path Milestones card width issue (still not fitting full container width despite w-full class)
+- [x] Review coinsxyz_brandguidelines_17.pdf for official color palette
+- [x] Replace all non-brand colors with official Coins.xyz colors only
+- [x] Ensure no gray, yellow, orange, or other off-brand colors are used

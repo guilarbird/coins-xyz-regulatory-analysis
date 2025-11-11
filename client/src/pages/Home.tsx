@@ -235,8 +235,8 @@ export default function Home() {
                 
                 {/* Status Update */}
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3 gradient-warm border-2 border-yellow-200 rounded-lg p-4">
-                    <Clock className="w-5 h-5 text-yellow-600 mt-0.5" />
+                  <div className="flex items-start gap-3 gradient-warm border-2 border-red-200 rounded-lg p-4">
+                    <Clock className="w-5 h-5 text-red-600 mt-0.5" />
                     <div>
                       <p className="font-semibold text-gray-900">In Progress</p>
                       <p className="text-sm text-gray-600">CNPJ registration of Joffre Asia with BCB</p>
@@ -337,25 +337,25 @@ export default function Home() {
       <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
         <div className="container max-w-7xl">
           <div className="flex items-center gap-3 mb-8">
-            <Users className="w-7 h-7 text-indigo-600" />
+            <Users className="w-7 h-7 text-purple-600" />
             <h2 className="text-3xl font-bold font-display">Team & Key Milestones</h2>
           </div>
           
           {/* Team Recognition */}
-          <Card className="w-full mb-8 border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-white">
+          <Card className="w-full mb-8 border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white">
             <CardHeader>
               <CardTitle className="font-display">Team Updates</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-start gap-3 bg-white rounded-lg p-4 border border-indigo-100">
-                  <div className="bg-indigo-600 text-white rounded-full p-2">
+                <div className="flex items-start gap-3 bg-white rounded-lg p-4 border border-purple-100">
+                  <div className="bg-purple-600 text-white rounded-full p-2">
                     <Users className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-gray-900 mb-1">Daniel Hott — Outstanding Performance</p>
                     <p className="text-gray-700 text-sm mb-2">Delivering exceptional support on internal/external client onboarding, processing licensing requirements, and regulatory coordination. Team capacity reaching point where intern-level support may be beneficial.</p>
-                    <Badge className="bg-indigo-100 text-indigo-700">Key Contributor</Badge>
+                    <Badge className="bg-purple-100 text-purple-700">Key Contributor</Badge>
                   </div>
                 </div>
                 
@@ -389,9 +389,9 @@ export default function Home() {
                     
                     <div className="flex-shrink-0">
                       <div className={`w-3 h-3 rounded-full mt-1 ${
-                        milestone.status === 'in-progress' ? 'bg-yellow-500 animate-pulse' :
+                        milestone.status === 'in-progress' ? 'bg-red-500 animate-pulse' :
                         milestone.status === 'upcoming' ? 'bg-blue-500' :
-                        'bg-gray-300'
+                        'bg-gray-400'
                       }`}></div>
                     </div>
                     
@@ -399,9 +399,9 @@ export default function Home() {
                       <div className="flex items-center gap-2 mb-1">
                         <p className="font-semibold text-gray-900">{milestone.title}</p>
                         <Badge variant="outline" className={
-                          milestone.status === 'in-progress' ? 'border-yellow-500 text-yellow-700' :
+                          milestone.status === 'in-progress' ? 'border-red-500 text-red-700' :
                           milestone.status === 'upcoming' ? 'border-blue-500 text-blue-700' :
-                          'border-gray-300 text-gray-600'
+                          'border-gray-400 text-gray-700'
                         }>
                           {milestone.status === 'in-progress' ? 'In Progress' :
                            milestone.status === 'upcoming' ? 'Upcoming' : 'Planned'}
@@ -439,10 +439,10 @@ export default function Home() {
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-orange-200 gradient-warm">
+            <Card className="border-2 border-red-200 gradient-warm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-display">
-                  <CheckCircle2 className="w-5 h-5 text-orange-600" />
+                  <CheckCircle2 className="w-5 h-5 text-red-600" />
                   External Audit
                 </CardTitle>
               </CardHeader>

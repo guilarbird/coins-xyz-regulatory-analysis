@@ -191,64 +191,58 @@
     animation: bounce-slow 3s ease-in-out infinite;
   }
   
-  /* Coins.xyz Official Brand Colors */
+  /* Coins.xyz Official Brand Colors (ONLY THESE 6 COLORS) */
   :root {
-    --coins-iris: #7A70FF;
-    --coins-green: #5DE828;
-    --coins-blue: #0062F5;
-    --coins-red: #ED452D;
-    --coins-pink: #FF006E;
-    --coins-cyan: #00D9FF;
+    --coins-iris: #7A70FF;    /* Purple - Primary brand color */
+    --coins-green: #5DE828;   /* Green - Success, EMI */
+    --coins-blue: #0062F5;    /* Blue - Info, VASP */
+    --coins-red: #ED452D;     /* Red - Critical, alerts */
+    --coins-black: #000000;   /* Black - Text, dark backgrounds */
+    --coins-white: #FFFFFF;   /* White - Light backgrounds */
   }
   
-  /* Coins.xyz Official Brand Gradients (from brand guidelines) */
+  /* Coins.xyz Official Brand Gradients (ONLY OFFICIAL COLORS) */
   
-  /* Primary Hero Gradient - Multi-spectrum soft flow */
+  /* Primary Hero Gradient - Iris to Blue to Green */
   .gradient-reddish {
     background: linear-gradient(135deg, 
-      var(--coins-green) 0%, 
-      var(--coins-cyan) 20%, 
-      var(--coins-blue) 40%, 
-      var(--coins-iris) 60%, 
-      var(--coins-pink) 80%, 
-      var(--coins-red) 100%
-    );
-  }
-  
-  /* Radial gradient variant - Purple-Blue-Green */
-  .gradient-radial-multi {
-    background: radial-gradient(circle at 30% 30%, 
-      #A78BFA 0%, 
-      #60A5FA 40%, 
+      var(--coins-iris) 0%, 
+      var(--coins-blue) 50%, 
       var(--coins-green) 100%
     );
   }
   
-  /* Angular diagonal - Pink-Red-Purple */
+  /* Radial gradient variant - Iris to Blue to Green */
+  .gradient-radial-multi {
+    background: radial-gradient(circle at 30% 30%, 
+      var(--coins-iris) 0%, 
+      var(--coins-blue) 50%, 
+      var(--coins-green) 100%
+    );
+  }
+  
+  /* Angular diagonal - Red to Iris */
   .gradient-angular {
     background: linear-gradient(135deg, 
-      var(--coins-pink) 0%, 
-      var(--coins-red) 50%, 
+      var(--coins-red) 0%, 
       var(--coins-iris) 100%
     );
   }
   
-  /* Soft warm gradient - Yellow-Orange-Red */
+  /* Alert/Critical gradient - Red tints */
   .gradient-warm {
     background: linear-gradient(135deg, 
-      #FEF3C7 0%, 
-      #FED7AA 30%, 
-      #FCA5A5 60%, 
-      #F87171 100%
+      rgba(237, 68, 45, 0.1) 0%, 
+      rgba(237, 68, 45, 0.2) 50%, 
+      rgba(237, 68, 45, 0.15) 100%
     );
   }
   
-  /* Soft cool gradient - Blue-Purple */
+  /* Info/Cool gradient - Blue to Iris */
   .gradient-cool {
     background: linear-gradient(135deg, 
-      #DBEAFE 0%, 
-      #C7D2FE 50%, 
-      #DDD6FE 100%
+      rgba(0, 98, 245, 0.1) 0%, 
+      rgba(122, 112, 255, 0.15) 100%
     );
   }
 
