@@ -168,3 +168,24 @@
 - [x] Align card widths consistently
 - [x] Add badges: IP/EMI or VASP
 - [x] Footer with controller info, legend (Blue = VASP, Green = IP/EMI, ⚖️ = Regulatory Deadline), last updated timestamp, FX note
+- [ ] Investigate and fix content disappearing/rendering issue on detail pages
+- [ ] Ensure all content is visible and properly displayed
+- [ ] Check for CSS issues causing white space or hidden content
+
+## Regulations Page Alignment Fix
+
+- [ ] Replace title "BCB Regulations" with "🧾 BCB Regulations Overview"
+- [ ] Move subtitle closer with 70% opacity
+- [ ] Add "Latest Updates" section divider above first card
+- [ ] Replace "Nov 10, 2025" with "November 10, 2025" (full date format)
+- [ ] Add "Published" status pill (blue) next to date
+- [ ] Use consistent typographic scale (text-lg font-semibold for resolution title)
+- [ ] Add expandable short description for each resolution
+- [ ] Use white cards with bg-white rounded-2xl shadow-md p-4
+- [ ] Add border-l-4 border-blue-500 accent to each resolution card
+- [ ] Keep spacing between cards = 24px
+- [ ] Add footer line: "Last updated • November 11, 2025 • Source: Banco Central do Brasil"
+- [ ] Maintain alignment with /dashboard visual grid
+- [x] Rollback regulations page to previous better version
+- [x] Fix white title visibility issue on regulations page
+- [x] Restore original spacing and layout (not compacted)
