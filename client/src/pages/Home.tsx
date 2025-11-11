@@ -144,7 +144,6 @@ export default function Home() {
         </div>
         
         <div className="container max-w-7xl relative z-10">
-          <div className="max-w-4xl">
             <div className="flex items-center gap-2 mb-4">
               <Sparkles className="w-6 h-6" />
               <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/30">
@@ -160,7 +159,7 @@ export default function Home() {
               Joffre Ortigas Asia Holdings → Coins.xyz Digital Markets & Global Trading
             </p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
                 <p className="text-sm text-white/80 mb-1">Total Capital Required</p>
                 <p className="text-2xl md:text-3xl font-bold font-display">{formatCurrency(23200000)}</p>
@@ -181,7 +180,6 @@ export default function Home() {
                 <p className="text-2xl md:text-3xl font-bold font-display">Jan 2028</p>
               </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -237,7 +235,7 @@ export default function Home() {
                 
                 {/* Status Update */}
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                  <div className="flex items-start gap-3 gradient-warm border-2 border-yellow-200 rounded-lg p-4">
                     <Clock className="w-5 h-5 text-yellow-600 mt-0.5" />
                     <div>
                       <p className="font-semibold text-gray-900">In Progress</p>
@@ -246,7 +244,7 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-3 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <div className="flex items-start gap-3 gradient-cool border-2 border-blue-200 rounded-lg p-4">
                     <FileText className="w-5 h-5 text-blue-600 mt-0.5" />
                     <div>
                       <p className="font-semibold text-gray-900">Bylaws Amendment</p>
@@ -344,7 +342,7 @@ export default function Home() {
           </div>
           
           {/* Team Recognition */}
-          <Card className="mb-8 border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-white">
+          <Card className="w-full mb-8 border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-white">
             <CardHeader>
               <CardTitle className="font-display">Team Updates</CardTitle>
             </CardHeader>
@@ -376,7 +374,7 @@ export default function Home() {
           </Card>
           
           {/* Milestones Timeline */}
-          <Card className="border-2 border-gray-200">
+          <Card className="w-full border-2 border-gray-200">
             <CardHeader>
               <CardTitle className="font-display">Critical Path Milestones</CardTitle>
               <CardDescription>Key dates and deliverables for dual-license authorization</CardDescription>
@@ -428,7 +426,7 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-2 border-red-200 bg-red-50">
+            <Card className="border-2 border-red-200 gradient-warm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-display">
                   <FileText className="w-5 h-5 text-red-600" />
@@ -437,11 +435,11 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-3">Comprehensive business plan aligned with BCB requirements for both VASP and Payment Institution authorization applications.</p>
-                <Badge className="bg-red-600 text-white">Critical Path</Badge>
+                <Badge className="gradient-angular text-white border-0">Critical Path</Badge>
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-orange-200 bg-orange-50">
+            <Card className="border-2 border-orange-200 gradient-warm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-display">
                   <CheckCircle2 className="w-5 h-5 text-orange-600" />
@@ -450,7 +448,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-3">Capital verification and financial audit required before authorization filing. Coordinated with capital injection timeline.</p>
-                <Badge className="bg-orange-600 text-white">Critical Path</Badge>
+                <Badge className="gradient-angular text-white border-0">Critical Path</Badge>
               </CardContent>
             </Card>
           </div>

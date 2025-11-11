@@ -201,22 +201,55 @@
     --coins-cyan: #00D9FF;
   }
   
-  /* Coins.xyz Brand Gradients - Reddish Variant (Primary) */
+  /* Coins.xyz Official Brand Gradients (from brand guidelines) */
+  
+  /* Primary Hero Gradient - Multi-spectrum soft flow */
   .gradient-reddish {
-    background: linear-gradient(135deg, var(--coins-red) 0%, var(--coins-pink) 25%, var(--coins-iris) 50%, var(--coins-blue) 75%, var(--coins-cyan) 100%);
+    background: linear-gradient(135deg, 
+      var(--coins-green) 0%, 
+      var(--coins-cyan) 20%, 
+      var(--coins-blue) 40%, 
+      var(--coins-iris) 60%, 
+      var(--coins-pink) 80%, 
+      var(--coins-red) 100%
+    );
   }
   
-  /* Alternative gradients */
-  .gradient-iris-green {
-    background: linear-gradient(135deg, var(--coins-iris) 0%, var(--coins-blue) 33%, var(--coins-cyan) 66%, var(--coins-green) 100%);
+  /* Radial gradient variant - Purple-Blue-Green */
+  .gradient-radial-multi {
+    background: radial-gradient(circle at 30% 30%, 
+      #A78BFA 0%, 
+      #60A5FA 40%, 
+      var(--coins-green) 100%
+    );
   }
   
-  .gradient-red-pink {
-    background: linear-gradient(135deg, var(--coins-red) 0%, var(--coins-pink) 100%);
+  /* Angular diagonal - Pink-Red-Purple */
+  .gradient-angular {
+    background: linear-gradient(135deg, 
+      var(--coins-pink) 0%, 
+      var(--coins-red) 50%, 
+      var(--coins-iris) 100%
+    );
   }
   
-  .gradient-pink-purple {
-    background: linear-gradient(135deg, var(--coins-pink) 0%, var(--coins-iris) 100%);
+  /* Soft warm gradient - Yellow-Orange-Red */
+  .gradient-warm {
+    background: linear-gradient(135deg, 
+      #FEF3C7 0%, 
+      #FED7AA 30%, 
+      #FCA5A5 60%, 
+      #F87171 100%
+    );
+  }
+  
+  /* Soft cool gradient - Blue-Purple */
+  .gradient-cool {
+    background: linear-gradient(135deg, 
+      #DBEAFE 0%, 
+      #C7D2FE 50%, 
+      #DDD6FE 100%
+    );
   }
 
   @media (min-width: 640px) {
