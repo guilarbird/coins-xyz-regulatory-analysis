@@ -189,3 +189,9 @@
 - [x] Rollback regulations page to previous better version
 - [x] Fix white title visibility issue on regulations page
 - [x] Restore original spacing and layout (not compacted)
+- [x] Remove duplicate inline color styles from IpAnalysis.tsx hero section
+- [x] Restore original white text color for better contrast on gradient background
+- [x] Fix EMI Analysis hero text visibility (white text on light gradient has no contrast)
+- [x] Change gradient to darker version or add dark overlay for better text contrast
+- [x] Fix VASP Analysis hero text visibility (same issue as EMI page)
+- [x] Change VASP hero gradient to darker version for better text contrast

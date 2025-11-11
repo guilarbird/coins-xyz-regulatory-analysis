@@ -97,7 +97,7 @@ export default function IpAnalysis() {
       </header>
 
       {/* Hero */}
-      <section className="gradient-iris-green text-white py-12">
+      <section className="gradient-reddish text-white py-12">
         <div className="container max-w-7xl">
           <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/30 mb-4">
             Payment Institution — Electronic Money
