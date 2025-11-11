@@ -26,3 +26,10 @@
 - [x] Listar consultas públicas em aberto (CP 109, 110, 111, 126, 119, 117)
 - [x] Tornar a página mais navegacional com menu interno
 - [x] Condensar conteúdo usando accordions/toggles para melhor navegação
+
+## Corrections Needed
+
+- [x] Remover badge "BCB Resolutions 517 & 14/2025" do cabeçalho
+- [x] Consolidar resoluções e consultas públicas em uma única seção "Regulatory Framework"
+- [x] Corrigir datas das consultas públicas (CP 109/110/111 são de 2024)
+- [x] Adicionar resoluções 519, 520, 521 publicadas em 10/11/2025 ao framework regulatório

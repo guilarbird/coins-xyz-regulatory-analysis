@@ -100,28 +100,23 @@ export default function Home() {
                 className="h-6"
               />
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex gap-1 bg-gray-100 rounded-lg p-0.5">
-                <button
-                  onClick={() => setCurrency('BRL')}
-                  className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
-                    currency === 'BRL' ? 'bg-white shadow-sm' : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  BRL (R$)
-                </button>
-                <button
-                  onClick={() => setCurrency('USD')}
-                  className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
-                    currency === 'USD' ? 'bg-white shadow-sm' : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  USD ($)
-                </button>
-              </div>
-              <Badge variant="outline" className="text-xs">
-                BCB Resolutions 517 & 14/2025
-              </Badge>
+            <div className="flex gap-1 bg-gray-100 rounded-lg p-0.5">
+              <button
+                onClick={() => setCurrency('BRL')}
+                className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+                  currency === 'BRL' ? 'bg-white shadow-sm' : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                BRL (R$)
+              </button>
+              <button
+                onClick={() => setCurrency('USD')}
+                className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+                  currency === 'USD' ? 'bg-white shadow-sm' : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                USD ($)
+              </button>
             </div>
           </div>
         </div>
@@ -146,8 +141,8 @@ export default function Home() {
             <button onClick={() => scrollToSection('calculator')} className="whitespace-nowrap text-gray-600 hover:text-blue-600 font-medium transition-colors">
               PRE Calculator
             </button>
-            <button onClick={() => scrollToSection('consultations')} className="whitespace-nowrap text-gray-600 hover:text-blue-600 font-medium transition-colors">
-              Public Consultations
+            <button onClick={() => scrollToSection('framework')} className="whitespace-nowrap text-gray-600 hover:text-blue-600 font-medium transition-colors">
+              Regulatory Framework
             </button>
           </div>
         </div>
@@ -667,92 +662,176 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Public Consultations Section */}
-      <section id="consultations" className="py-12 bg-gray-50">
+      {/* Regulatory Framework Section */}
+      <section id="framework" className="py-12 bg-gray-50">
         <div className="container max-w-6xl">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-2">Ongoing Public Consultations</h2>
-            <p className="text-gray-600">Open regulatory topics for industry feedback</p>
+            <h2 className="text-3xl font-bold mb-2">Regulatory Framework</h2>
+            <p className="text-gray-600">Published resolutions and ongoing public consultations</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <Card>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">CP 109/2024</CardTitle>
-                  <Badge variant="outline" className="text-xs">Deadline: Feb 28, 2026</Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm">
-                <p className="text-gray-700"><strong>Topic:</strong> VASP (Virtual Asset Service Providers) operational framework and authorization requirements</p>
-              </CardContent>
-            </Card>
+          {/* Published Resolutions */}
+          <div className="mb-8">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <FileText className="w-5 h-5 text-green-600" />
+              Published Resolutions
+            </h3>
+            <Accordion type="single" collapsible className="space-y-2">
+              <AccordionItem value="res-517-14" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-green-600">Nov 3, 2025</Badge>
+                      <span className="font-semibold">Joint Resolution No. 14/2025 & BCB Resolution No. 517/2025</span>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Capital requirements for Payment Institutions (IPs)</p>
+                    <p>Establishes minimum capital requirements ranging from R$ 9.2M to R$ 32.8M for payment institutions, with gradual implementation through 2028.</p>
+                    <p className="text-xs text-gray-500">Impact: ~500 IPs affected, estimated 28% will need recapitalization or M&A</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-            <Card>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">CP 110/2024</CardTitle>
-                  <Badge variant="outline" className="text-xs">Deadline: Feb 28, 2026</Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm">
-                <p className="text-gray-700"><strong>Topic:</strong> Authorization of VASPs by Payment Institutions (IPs) - regulatory bridge framework</p>
-              </CardContent>
-            </Card>
+              <AccordionItem value="res-519" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-blue-600">Nov 10, 2025</Badge>
+                      <span className="font-semibold">BCB Resolution No. 519/2025</span>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Authorization processes for VASPs and other financial intermediaries</p>
+                    <p>Establishes the authorization processes for operating foreign exchange brokers, securities brokers, securities distributors, and virtual asset service providers.</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-            <Card>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">CP 111/2024</CardTitle>
-                  <Badge variant="outline" className="text-xs">Deadline: Feb 28, 2026</Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm">
-                <p className="text-gray-700"><strong>Topic:</strong> Virtual assets in foreign exchange operations - cross-border transaction rules</p>
-              </CardContent>
-            </Card>
+              <AccordionItem value="res-520" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-blue-600">Nov 10, 2025</Badge>
+                      <span className="font-semibold">BCB Resolution No. 520/2025</span>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Incorporation and operation of Virtual Asset Service Providers (VASPs)</p>
+                    <p>Regulates the incorporation and operation of VASPs and the provision of virtual asset services by other institutions already authorized by the Central Bank.</p>
+                    <p className="text-xs text-gray-500">Effective: February 2, 2026 | Reporting obligations: May 4, 2026</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-            <Card>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">CP 126/2025</CardTitle>
-                  <Badge variant="outline" className="text-xs">Deadline: Dec 31, 2025</Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm">
-                <p className="text-gray-700"><strong>Topic:</strong> Prudential classification of virtual assets and tokens - risk weighting methodology</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">CP 119/2025</CardTitle>
-                  <Badge variant="outline" className="text-xs">Deadline: May 31, 2026</Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm">
-                <p className="text-gray-700"><strong>Topic:</strong> Sustainability accounting standards for financial institutions including VASPs</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">CP 117/2025</CardTitle>
-                  <Badge variant="outline" className="text-xs">Deadline: May 31, 2026</Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm">
-                <p className="text-gray-700"><strong>Topic:</strong> Naming and denomination rules for financial institutions - brand compliance requirements</p>
-              </CardContent>
-            </Card>
+              <AccordionItem value="res-521" className="bg-white border rounded-lg">
+                <AccordionTrigger className="px-4 hover:no-underline">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center gap-3">
+                      <Badge className="bg-blue-600">Nov 10, 2025</Badge>
+                      <span className="font-semibold">BCB Resolution No. 521/2025</span>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4">
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Topic:</strong> Virtual assets in foreign exchange market framework</p>
+                    <p>Includes virtual asset service provider activities within the foreign exchange market framework and defines rules for Brazilian capital abroad and foreign capital in Brazil.</p>
+                    <p className="text-xs text-gray-500">International payments/transfers with VAs, self-custody transfers, and fiat-referenced swaps treated as FX operations</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
 
-          <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded text-sm">
-            <p className="text-gray-700">
-              <strong>Industry Recommendation:</strong> Submit collective contributions for CP 109-111 by November 15, 2025, focusing on "IPs as regulated bridges to DeFi" framework.
-            </p>
+          {/* Ongoing Public Consultations */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 text-orange-600" />
+              Ongoing Public Consultations
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Card className="border-orange-200">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base">CP 109/2024</CardTitle>
+                    <Badge variant="outline" className="text-xs bg-orange-50">Closed</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sm">
+                  <p className="text-gray-700 mb-2"><strong>Topic:</strong> VASP operational framework and authorization requirements</p>
+                  <p className="text-xs text-gray-500">Resulted in Resolutions 519 & 520 published Nov 10, 2025</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-orange-200">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base">CP 110/2024</CardTitle>
+                    <Badge variant="outline" className="text-xs bg-orange-50">Closed</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sm">
+                  <p className="text-gray-700 mb-2"><strong>Topic:</strong> Authorization of VASPs by Payment Institutions (IPs)</p>
+                  <p className="text-xs text-gray-500">Resulted in regulatory bridge framework in Resolution 520</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-orange-200">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base">CP 111/2024</CardTitle>
+                    <Badge variant="outline" className="text-xs bg-orange-50">Closed</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sm">
+                  <p className="text-gray-700 mb-2"><strong>Topic:</strong> Virtual assets in foreign exchange operations</p>
+                  <p className="text-xs text-gray-500">Resulted in Resolution 521 published Nov 10, 2025</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-yellow-200">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base">CP 126/2025</CardTitle>
+                    <Badge variant="outline" className="text-xs bg-yellow-50">Deadline: Dec 31, 2025</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sm">
+                  <p className="text-gray-700"><strong>Topic:</strong> Prudential classification of virtual assets and tokens - risk weighting methodology</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-yellow-200">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base">CP 119/2025</CardTitle>
+                    <Badge variant="outline" className="text-xs bg-yellow-50">Deadline: May 31, 2026</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sm">
+                  <p className="text-gray-700"><strong>Topic:</strong> Sustainability accounting standards for financial institutions including VASPs</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-yellow-200">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base">CP 117/2025</CardTitle>
+                    <Badge variant="outline" className="text-xs bg-yellow-50">Deadline: May 31, 2026</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sm">
+                  <p className="text-gray-700"><strong>Topic:</strong> Naming and denomination rules for financial institutions - brand compliance requirements</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
