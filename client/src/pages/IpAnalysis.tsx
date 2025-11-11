@@ -102,7 +102,7 @@ export default function IpAnalysis() {
           <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/30 mb-4">
             Payment Institution — Electronic Money
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-3 font-display">EMI Analysis</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 font-display">IP Analysis</h1>
           <p className="text-xl text-white/90 mb-6">Coins.xyz Global Trading Ltda. — BCB Resolutions 517 & 14/2025</p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -188,7 +188,7 @@ export default function IpAnalysis() {
                         <h4 className="font-semibold font-display">Capital Contribution</h4>
                       </div>
                       <p className="text-2xl font-bold text-blue-600 mb-2 font-display">{formatCurrency(9200000)}</p>
-                      <p className="text-sm text-gray-700 mb-3">One-time injection of paid-in capital required to establish the EMI.</p>
+                      <p className="text-sm text-gray-700 mb-3">One-time injection of paid-in capital required to establish the IP.</p>
                       <ul className="text-xs text-gray-600 space-y-1">
                         <li>• Fully paid in cash</li>
                         <li>• Gradual: 25% → 50% → 100%</li>
@@ -229,7 +229,7 @@ export default function IpAnalysis() {
                     IP Authorization Roadmap
                   </CardTitle>
                   <CardDescription>
-                    Detailed schedule for Coins.xyz Global Trading authorization as Payment Institution (EMI + Payment Account + BaaS + Indirect PIX)
+                    Detailed schedule for Coins.xyz Global Trading authorization as Payment Institution (IP + Payment Account + BaaS + Indirect PIX)
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -472,7 +472,7 @@ export default function IpAnalysis() {
             <TabsContent value="checklist" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-display">EMI Authorization Checklist</CardTitle>
+                  <CardTitle className="font-display">IP Authorization Checklist</CardTitle>
                   <CardDescription>Key requirements for BCB authorization under Resolutions 517 & 14/2025</CardDescription>
                 </CardHeader>
                 <CardContent>

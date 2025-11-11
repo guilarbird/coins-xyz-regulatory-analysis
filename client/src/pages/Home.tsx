@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2, Users, Calendar, TrendingUp, FileText, Scale, DollarSign, CheckCircle2, Clock, AlertCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Building2, Users, Calendar, TrendingUp, FileText, Scale, DollarSign, CheckCircle2, Clock, AlertCircle, Sparkles, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { APP_LOGO } from "@/const";
@@ -54,8 +54,8 @@ export default function Home() {
     }).format(value);
   };
 
-  // Thread A — IP/EMI (EFI) 〔green〕
-  const threadIPEMI: Array<{
+  // Thread A — IP (Payment Institution) 〔green〕
+  const threadIP: Array<{
     date: string;
     title: string;
     status: "in-progress" | "upcoming" | "planned";
@@ -63,49 +63,74 @@ export default function Home() {
     regulatoryCutoff: string;
     capital?: string;
     badge: string;
+    whyThisMilestone: string;
   }> = [
     {
       date: "Dec 01, 2025",
-      title: "EFI / Payment Institution Preparation",
+      title: "IP Authorization Preparation",
       status: "in-progress",
-      description: "Kick-off of IP authorization with BCB; controller formalization + MCZ coordination; initial capital injection EMI: R$ 2.0M.",
+      description: "Opens BCB docket and aligns governance so the IP dossier can be assembled without rework.",
       regulatoryCutoff: "start dossier before Jan 2026",
-      capital: "R$ 2.0M",
-      badge: "IP/EMI"
+      badge: "IP",
+      whyThisMilestone: "Opens BCB docket and aligns governance so the IP dossier can be assembled without rework."
     },
     {
       date: "Jan 05, 2026",
-      title: "Business Plan Completion (IP scope)",
+      title: "Business Plan Completion (IP)",
       status: "in-progress",
-      description: "BP finalized for IP; compliance framework ready.",
+      description: "Mandatory artifact; defines products, risk, PRE assumptions, and controls for auditor/BCB review.",
       regulatoryCutoff: "BP attached to pre-audit pack",
-      badge: "IP/EMI"
+      badge: "IP",
+      whyThisMilestone: "Mandatory artifact; defines products, risk, PRE assumptions, and controls for auditor/BCB review."
+    },
+    {
+      date: "Feb 28, 2026",
+      title: "Partial Capital Injection (IP)",
+      status: "upcoming",
+      description: "Jan–Feb 2026 window. Meets fixed/cumulative capital for pre-audit checks and financial capacity before filing.",
+      regulatoryCutoff: "capital on books for pre-audit",
+      capital: "R$ 2.0M",
+      badge: "IP",
+      whyThisMilestone: "Meets fixed/cumulative capital for pre-audit checks and financial capacity before filing."
+    },
+    {
+      date: "Mar 15, 2026",
+      title: "IP Filing (Target)",
+      status: "upcoming",
+      description: "Starts BCB review early on a clean dossier while VASP work runs in parallel.",
+      regulatoryCutoff: "IP authorization filing deadline",
+      badge: "IP",
+      whyThisMilestone: "Starts BCB review early on a clean dossier while VASP work runs in parallel."
     },
     {
       date: "May 01, 2026",
       title: "Pre-Audit Capital Injection (IP)",
       status: "upcoming",
-      description: "EMI cumulative: R$ 5.0M (incl. R$ 3.0M in May phase)",
+      description: "Tops up to auditor-required cumulative amount at audit date. Cumulative: R$ 5.0M",
       regulatoryCutoff: "capital on books for audit start in Jun",
-      capital: "R$ 5.0M",
-      badge: "IP/EMI"
+      capital: "R$ 3.0M",
+      badge: "IP",
+      whyThisMilestone: "Tops up to auditor-required cumulative amount at audit date."
     },
     {
       date: "Nov 01, 2026",
-      title: "IP Authorization Filing (EMI/EFI)",
+      title: "Authorization Filing Injection (Both)",
       status: "planned",
-      description: "EMI total: R$ 9.2M comprovado no filing.",
+      description: "Aligns paid-in capital to final PRE/exposure at filing, avoiding conditional approvals. IP: R$ 2.5M, Cumulative: R$ 7.5M",
       regulatoryCutoff: "full capital evidenced at filing",
-      capital: "R$ 9.2M",
-      badge: "IP/EMI"
+      capital: "R$ 2.5M",
+      badge: "IP",
+      whyThisMilestone: "Aligns paid-in capital to final PRE/exposure at filing, avoiding conditional approvals."
     },
     {
       date: "Jan 15, 2028",
-      title: "Full Compliance (IP)",
+      title: "Final Compliance Injection (Both)",
       status: "planned",
-      description: "Operational readiness complete.",
+      description: "Post-authorization top-up to match initial operating scale and ensure year-one compliance. IP: R$ 1.7M, Cumulative: R$ 9.2M",
       regulatoryCutoff: "residual adjustments closed",
-      badge: "IP/EMI"
+      capital: "R$ 1.7M",
+      badge: "IP",
+      whyThisMilestone: "Post-authorization top-up to match initial operating scale and ensure year-one compliance."
     }
   ];
 
@@ -118,52 +143,60 @@ export default function Home() {
     regulatoryCutoff: string;
     capital?: string;
     badge: string;
+    whyThisMilestone: string;
   }> = [
     {
-      date: "Dec 01, 2025",
-      title: "Initial Capital Injection (VASP)",
-      status: "in-progress",
-      description: "VASP: R$ 3.0M",
-      regulatoryCutoff: "pre-filing capitalization plan initiated",
+      date: "Feb 28, 2026",
+      title: "Partial Capital Injection (VASP)",
+      status: "upcoming",
+      description: "Jan–Feb 2026 window. Brings VASP to baseline so auditors can validate controls and PRE.",
+      regulatoryCutoff: "capital on books for pre-audit",
       capital: "R$ 3.0M",
-      badge: "VASP"
+      badge: "VASP",
+      whyThisMilestone: "Brings VASP to baseline so auditors can validate controls and PRE."
     },
     {
       date: "May 01, 2026",
       title: "Pre-Audit Capital Injection (VASP)",
       status: "upcoming",
-      description: "VASP cumulative: R$ 8.0M (R$ 5.0M na fase de maio)",
-      regulatoryCutoff: "mínimo para auditoria até May 01; janela técnica pode correr até Sep 30, 2026 se auditoria mantida antes do filing",
-      capital: "R$ 8.0M",
-      badge: "VASP"
+      description: "Ensures VASP cumulative capital matches the level to be attested. Cumulative: R$ 8.0M",
+      regulatoryCutoff: "capital on books for audit start in Jun",
+      capital: "R$ 5.0M",
+      badge: "VASP",
+      whyThisMilestone: "Ensures VASP cumulative capital matches the level to be attested."
     },
     {
       date: "Jun 01, 2026",
       title: "External Audit Window (VASP)",
       status: "upcoming",
-      description: "Jun 01 – Sep 30, 2026",
-      regulatoryCutoff: "laudo concluído antes do filing",
-      badge: "VASP"
+      description: "Jun 01 – Sep 30, 2026. Independent audit evidence; required in filing package.",
+      regulatoryCutoff: "audit completed before filing",
+      badge: "VASP",
+      whyThisMilestone: "Independent audit evidence; required in filing package."
     },
     {
       date: "Nov 01, 2026",
-      title: "VASP Authorization Filing",
+      title: "VASP Authorization Deadline",
       status: "planned",
-      description: "Submissão ao BCB com laudo e capital exigido.",
-      regulatoryCutoff: "documentação completa na data de filing",
-      badge: "VASP"
+      description: "Regulatory deadline for VASP authorization filing with BCB. VASP: R$ 3.5M, Cumulative: R$ 11.5M",
+      regulatoryCutoff: "VASP authorization deadline",
+      capital: "R$ 3.5M",
+      badge: "VASP",
+      whyThisMilestone: "Aligns paid-in capital to final PRE/exposure at filing, avoiding conditional approvals."
     },
     {
       date: "Jan 15, 2028",
-      title: "Full Compliance (VASP)",
+      title: "Final Compliance Injection (Both)",
       status: "planned",
-      description: "Requisitos finais atendidos.",
-      regulatoryCutoff: "encerramento de pendências",
-      badge: "VASP"
+      description: "Post-authorization top-up to match initial operating scale and ensure year-one compliance. VASP: R$ 2.5M, Cumulative: R$ 14.0M",
+      regulatoryCutoff: "residual adjustments closed",
+      capital: "R$ 2.5M",
+      badge: "VASP",
+      whyThisMilestone: "Post-authorization top-up to match initial operating scale and ensure year-one compliance."
     }
   ];
 
-  const milestones = [...threadIPEMI, ...threadVASP].sort((a, b) => 
+  const milestones = [...threadIP, ...threadVASP].sort((a, b) => 
     new Date(a.date).getTime() - new Date(b.date).getTime()
   );
 
@@ -242,7 +275,7 @@ export default function Home() {
               
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
                 <p className="text-sm text-white/80 mb-1">Dual Licenses</p>
-                <p className="text-2xl md:text-3xl font-bold font-display">VASP + EMI</p>
+                <p className="text-2xl md:text-3xl font-bold font-display">VASP + IP</p>
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
@@ -301,7 +334,7 @@ export default function Home() {
                       
                       <div className="bg-green-100 border-2 border-green-300 rounded-xl p-4 text-center">
                         <p className="font-semibold text-green-900 mb-1 font-display">Coins.xyz Global Trading Ltda.</p>
-                        <Badge className="bg-green-600 text-white">EMI License</Badge>
+                        <Badge className="bg-green-600 text-white">IP License</Badge>
                         <p className="text-sm text-green-700 mt-2">Electronic Money Institution</p>
                       </div>
                     </div>
@@ -361,7 +394,7 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-display">
                   <Building2 className="w-5 h-5 text-green-600" />
-                  EMI Capital
+                  IP Capital
                 </CardTitle>
                 <CardDescription>Coins.xyz Global Trading</CardDescription>
               </CardHeader>
@@ -396,67 +429,101 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
-                {/* Q4 2025 - Initial Injection */}
+                {/* Jan-Feb 2026 - Partial Injection (IP) */}
                 <div className="bg-green-50 border-l-4 border-green-500 rounded-r-lg p-4 mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <p className="text-xs text-gray-600">Q4 2025 • Dec 2025</p>
-                      <p className="font-semibold text-gray-900">Initial Capital Injection</p>
+                      <p className="text-xs text-gray-600">Q1 2026 • Jan–Feb 2026</p>
+                      <p className="font-semibold text-gray-900">Partial Capital Injection (IP)</p>
+                      <Badge className="bg-green-100 text-green-700 border-green-300 text-xs ml-2">Window</Badge>
                     </div>
-                    <p className="text-lg font-bold text-green-600 font-display">R$ 5M</p>
+                    <p className="text-lg font-bold text-green-600 font-display">R$ 2.0M</p>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">First phase covering business plan preparation and initial compliance setup</p>
+                  <p className="text-sm text-gray-600 mb-2">Meets fixed/cumulative capital for pre-audit checks and financial capacity before filing</p>
                   <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3M</span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 2M</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 2.0M</span>
+                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 2.0M</span>
                   </div>
                 </div>
 
-                {/* Q2 2026 - Pre-Audit Injection */}
+                {/* Jan-Feb 2026 - Partial Injection (VASP) */}
                 <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <p className="text-xs text-gray-600">Q2 2026 • May 2026</p>
-                      <p className="font-semibold text-gray-900">Pre-Audit Capital Injection</p>
+                      <p className="text-xs text-gray-600">Q1 2026 • Jan–Feb 2026</p>
+                      <p className="font-semibold text-gray-900">Partial Capital Injection (VASP)</p>
+                      <Badge className="bg-blue-100 text-blue-700 border-blue-300 text-xs ml-2">Window</Badge>
                     </div>
-                    <p className="text-lg font-bold text-blue-600 font-display">R$ 8M</p>
+                    <p className="text-lg font-bold text-blue-600 font-display">R$ 3.0M</p>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">Second phase before external audit for BCB verification</p>
+                  <p className="text-sm text-gray-600 mb-2">Brings VASP to baseline so auditors can validate controls and PRE</p>
                   <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 5M</span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 3M</span>
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3.0M</span>
+                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 3.0M</span>
                   </div>
                 </div>
 
-                {/* Q4 2026 - Authorization Filing Injection */}
+                {/* 01 May 2026 - Pre-Audit Injection (IP) */}
+                <div className="bg-green-50 border-l-4 border-green-500 rounded-r-lg p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="text-xs text-gray-600">Q2 2026 • 01 May 2026</p>
+                      <p className="font-semibold text-gray-900">Pre-Audit Capital Injection (IP)</p>
+                    </div>
+                    <p className="text-lg font-bold text-green-600 font-display">R$ 3.0M</p>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-2">Tops up to auditor-required cumulative amount at audit date</p>
+                  <div className="flex gap-2 text-xs">
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 3.0M</span>
+                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 5.0M</span>
+                  </div>
+                </div>
+
+                {/* 01 May 2026 - Pre-Audit Injection (VASP) */}
                 <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="text-xs text-gray-600">Q2 2026 • 01 May 2026</p>
+                      <p className="font-semibold text-gray-900">Pre-Audit Capital Injection (VASP)</p>
+                    </div>
+                    <p className="text-lg font-bold text-blue-600 font-display">R$ 5.0M</p>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-2">Ensures VASP cumulative capital matches the level to be attested</p>
+                  <div className="flex gap-2 text-xs">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 5.0M</span>
+                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 8.0M</span>
+                  </div>
+                </div>
+
+                {/* Nov 2026 - Authorization Filing Injection (Both) */}
+                <div className="bg-purple-50 border-l-4 border-purple-500 rounded-r-lg p-4 mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <div>
                       <p className="text-xs text-gray-600">Q4 2026 • Nov 2026</p>
-                      <p className="font-semibold text-gray-900">Authorization Filing Injection</p>
+                      <p className="font-semibold text-gray-900">Authorization Filing Injection (Both)</p>
                     </div>
-                    <p className="text-lg font-bold text-blue-600 font-display">R$ 6M</p>
+                    <p className="text-lg font-bold text-purple-600 font-display">R$ 6.0M</p>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">Third phase for VASP & IP authorization filing with BCB</p>
+                  <p className="text-sm text-gray-600 mb-2">Aligns paid-in capital to final PRE/exposure at filing, avoiding conditional approvals</p>
                   <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3.5M</span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 2.5M</span>
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3.5M (Cumul: R$ 11.5M)</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 2.5M (Cumul: R$ 7.5M)</span>
                   </div>
                 </div>
 
-                {/* Q1 2028 - Final Compliance Injection */}
+                {/* Jan 2028 - Final Compliance Injection (Both) */}
                 <div className="bg-purple-50 border-l-4 border-purple-500 rounded-r-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div>
                       <p className="text-xs text-gray-600">Q1 2028 • Jan 2028</p>
-                      <p className="font-semibold text-gray-900">Final Compliance Injection</p>
+                      <p className="font-semibold text-gray-900">Final Compliance Injection (Both)</p>
                     </div>
                     <p className="text-lg font-bold text-purple-600 font-display">R$ 4.2M</p>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">Final phase to reach full compliance and operational readiness</p>
+                  <p className="text-sm text-gray-600 mb-2">Post-authorization top-up to match initial operating scale and ensure year-one compliance</p>
                   <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 2.5M</span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 1.7M</span>
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 2.5M (Cumul: R$ 14.0M)</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 1.7M (Cumul: R$ 9.2M)</span>
                   </div>
                 </div>
               </div>
@@ -519,6 +586,116 @@ export default function Home() {
             </CardContent>
           </Card>
           
+          {/* Structural & Legal Tasks */}
+          <div className="w-full mb-12">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold font-display mb-2">Structural & Legal Tasks</h3>
+              <p className="text-gray-600">Prerequisites for regulatory authorization and capital compliance</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Bylaws Amendment */}
+              <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 font-display text-lg">
+                    <FileText className="w-5 h-5 text-purple-600" />
+                    Bylaws Amendment
+                  </CardTitle>
+                  <CardDescription>Controller change to Joffre Ortigas Asia</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Badge className="bg-red-100 text-red-700 border-red-300 border mb-4">In Progress</Badge>
+                  <p className="text-sm text-gray-700 mb-3">Updates cap-table to Joffre Ortigas Asia Holdings; prerequisite for audit sign-off, RDE-IED and BCB filings.</p>
+                  <div className="space-y-2 text-xs text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                      <span>Remove Joffre BR from structure</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                      <span>Formalize JO Asia as controller</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                      <span>Board approval & registration</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-purple-200">
+                    <p className="text-xs text-gray-700"><span className="font-bold">Why this milestone:</span> Updates cap-table to Joffre Ortigas Asia; prerequisite for audit sign-off, RDE-IED and BCB filings.</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Controller/CNPJ Registration */}
+              <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 font-display text-lg">
+                    <Building2 className="w-5 h-5 text-blue-600" />
+                    Controller/CNPJ Registration
+                  </CardTitle>
+                  <CardDescription>BCB registration for fit-and-proper checks</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Badge className="bg-blue-100 text-blue-700 border-blue-300 border mb-4">Expected: 13 Nov 2025</Badge>
+                  <p className="text-sm text-gray-700 mb-3">Enables fit-and-proper checks; hard dependency for IP/VASP submissions.</p>
+                  <div className="space-y-2 text-xs text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                      <span>CNPJ registration with BCB</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                      <span>Fit-and-proper documentation</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                      <span>Controller formalization</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-blue-200">
+                    <p className="text-xs text-gray-700"><span className="font-bold">Why this milestone:</span> Enables fit-and-proper checks; hard dependency for IP/VASP submissions.</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* RDE-IED Registration */}
+              <Card className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-white">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 font-display text-lg">
+                    <Globe className="w-5 h-5 text-green-600" />
+                    RDE-IED (FDI) Registration
+                  </CardTitle>
+                  <CardDescription>Foreign Direct Investment legalization</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Badge className="bg-gray-100 text-gray-700 border-gray-300 border mb-4">Pending</Badge>
+                  <p className="text-sm text-gray-700 mb-3">Legalizes foreign inflows so capital counts toward regulatory totals and can be audited.</p>
+                  <div className="space-y-2 text-xs text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                      <span>Bylaws updated</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                      <span>Capitalization docs</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                      <span>Board minutes</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                      <span>Proof of remittance</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-green-200">
+                    <p className="text-xs text-gray-700"><span className="font-bold">Why this milestone:</span> Legalizes foreign inflows so capital counts toward regulatory totals and can be audited.</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          
           {/* Dual-Thread Timeline */}
           <div className="w-full">
             <div className="mb-8">
@@ -527,12 +704,12 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Thread A — IP/EMI (EFI) 〔green〕 */}
+              {/* Thread A — IP (Payment Institution) 〔green〕 */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-1 h-8 bg-green-500 rounded-full"></div>
                   <div>
-                    <h4 className="text-lg font-bold font-display text-green-700">Thread A — IP/EMI (EFI)</h4>
+                    <h4 className="text-lg font-bold font-display text-green-700">Thread A — IP (Payment Institution)</h4>
                     <p className="text-xs text-gray-600">Payment Institution Authorization</p>
                   </div>
                 </div>
@@ -541,7 +718,7 @@ export default function Home() {
                   {/* Vertical connector */}
                   <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-green-200"></div>
 
-                  {threadIPEMI.map((item, index) => (
+                  {threadIP.map((item, index) => (
                     <div key={index} className="relative">
                       {/* Dot connector */}
                       <div className={`absolute -left-[18px] top-4 w-2 h-2 rounded-full ${
@@ -577,6 +754,10 @@ export default function Home() {
                         <div className="flex items-start gap-2 pt-3 border-t border-gray-200">
                           <Scale className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                           <p className="text-xs text-gray-600"><span className="font-semibold">Regulatory cutoff:</span> {item.regulatoryCutoff}</p>
+                        </div>
+                        
+                        <div className="mt-3 pt-3 border-t border-gray-100">
+                          <p className="text-xs text-gray-700"><span className="font-bold">Why this milestone:</span> {item.whyThisMilestone}</p>
                         </div>
                       </div>
                     </div>
@@ -635,6 +816,10 @@ export default function Home() {
                           <Scale className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                           <p className="text-xs text-gray-600"><span className="font-semibold">Regulatory cutoff:</span> {item.regulatoryCutoff}</p>
                         </div>
+                        
+                        <div className="mt-3 pt-3 border-t border-gray-100">
+                          <p className="text-xs text-gray-700"><span className="font-bold">Why this milestone:</span> {item.whyThisMilestone}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -647,7 +832,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-bold text-gray-900 mb-2">Corporate Structure</h5>
-                  <p className="text-sm text-gray-600">Controller: <span className="font-semibold">Joffre Ortigas Asia Holdings</span> → Coins.xyz Digital Markets (VASP) | Coins.xyz Global Trading (EMI)</p>
+                  <p className="text-sm text-gray-600">Controller: <span className="font-semibold">Joffre Ortigas Asia Holdings</span> → Coins.xyz Digital Markets (VASP) | Coins.xyz Global Trading (IP)</p>
                 </div>
                 <div>
                   <h5 className="font-bold text-gray-900 mb-2">Legend</h5>
@@ -658,7 +843,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                      <span className="text-gray-600">Green = IP/EMI</span>
+                      <span className="text-gray-600">Green = IP</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <Scale className="w-3 h-3 text-gray-500" />
@@ -754,7 +939,7 @@ export default function Home() {
                     <CardTitle className="flex items-center justify-between font-display">
                       <span className="flex items-center gap-2">
                         <Building2 className="w-6 h-6 text-green-600" />
-                        Payment Institution (EMI)
+                        Payment Institution (IP)
                       </span>
                       <ArrowRight className="w-6 h-6 text-green-600" />
                     </CardTitle>
@@ -765,7 +950,7 @@ export default function Home() {
                     <div className="flex flex-wrap gap-2">
                       <Badge className="bg-green-100 text-green-700">Capital Structure</Badge>
                       <Badge className="bg-green-100 text-green-700">Gradual Implementation</Badge>
-                      <Badge className="bg-green-100 text-green-700">EMI Requirements</Badge>
+                      <Badge className="bg-green-100 text-green-700">IP Requirements</Badge>
                     </div>
                   </CardContent>
                 </Card>

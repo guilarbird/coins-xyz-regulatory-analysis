@@ -195,3 +195,90 @@
 - [x] Change gradient to darker version or add dark overlay for better text contrast
 - [x] Fix VASP Analysis hero text visibility (same issue as EMI page)
 - [x] Change VASP hero gradient to darker version for better text contrast
+
+## Magnus Site-wide Fix & Update
+
+### 1. Nomenclature & Content (GLOBAL)
+- [ ] Replace all EMI/EFI strings with IP (Payment Institution) across cards, chips, footers, breakdowns
+- [ ] Money format: R$ 3.000.000 (thousand separators, no decimals unless needed)
+- [ ] Each milestone shows: Type, Entity (VASP/IP/Both), Status (In Progress/Upcoming/Deadline)
+- [ ] Dates use DD Mon YYYY; ranges use Window chip (e.g., Jan–Feb 2026)
+
+### 2. Capital Schedule — Truth Constraints
+- [ ] Remove all capital before Feb 2026 (no Dec 2025 injections)
+- [ ] Add Partial Capital Injection windows Jan–Feb 2026 for IP and VASP
+- [ ] Pre-Audit Capital Injection: 01 May 2026 (IP and VASP)
+- [ ] External Audit Window (VASP): 01 Jun – 30 Sep 2026
+- [ ] IP Filing (Target): 15 Mar 2026
+- [ ] VASP Authorization Deadline: 01 Nov 2026 (Deadline chip)
+- [ ] Full Compliance: Jan 2028
+- [ ] Show Amount (this step) and Cumulative (by entity) on every capital card
+- [ ] Total Capital Required auto-computed from all steps (sum IP + VASP)
+
+### 3. "Why this milestone" Justification Lines
+- [ ] Add bold "Why this milestone:" label + 1-2 sentences to every milestone card
+- [ ] Use exact copy from Magnus spec for each milestone
+
+### 4. Structural & Legal Tasks Section
+- [ ] Create three-card row above timeline
+- [ ] Card 1: Bylaws Amendment (controller change to Joffre Ortigas Asia) - In Progress
+- [ ] Card 2: Controller/CNPJ Registration with BCB - Expected: 13 Nov 2025
+- [ ] Card 3: RDE-IED (FDI) Registration with checklist - Status: Pending
+
+### 5. Executive Dashboard (HOME)
+- [ ] Put Executive Dashboard cards above timeline
+- [ ] Card 1: Total Capital Required (auto from steps)
+- [ ] Card 2: Dual Licenses: VASP + IP
+- [ ] Card 3: Target IP Filing: 15 Mar 2026
+- [ ] Card 4: VASP Authorization Deadline: 01 Nov 2026
+- [ ] Card 5: Full Compliance: Jan 2028
+- [ ] Timeline items include Entity chips and Why line
+
+### 6. Page-Specific Content
+- [ ] /vasp: Subtitle "Coins.xyz Digital Markets Ltda. — BCB Resolutions 519, 520 & 521"
+- [ ] /vasp: Top cards - Minimum Capital (R$ 14.000.000), Target Filing (Nov 2026), Full Compliance (Jan 2028)
+- [ ] /ip: Rename from EMI to IP Analysis
+- [ ] /ip: Subtitle "Coins.xyz Global Trading Ltda. — BCB Resolutions 517 & 14/2025"
+- [ ] /ip: Top cards - Minimum Capital (R$ 9.200.000), Target Filing (15 Mar 2026), Full Compliance (Jan 2028)
+- [ ] All breakdown chips say IP (never EMI)
+
+### 7. Layout & Responsiveness
+- [ ] Hero container: max-w-7xl mx-auto px-4 md:px-6 mb-5 md:mb-6
+- [ ] Title size: clamp(28px, 4vw, 44px); leading-tight; single line
+- [ ] Cards grid: grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6
+- [ ] Card min-h-[96px] md:min-h-[120px] p-4 md:p-5
+- [ ] Currency toggle: on XS, its own row (no overlap with hero/tabs)
+- [ ] Tabs: sticky top-[64px] md:top-[72px] z-30 bg-white/85 backdrop-blur border-b
+- [ ] Tabs container: max-w-7xl mx-auto px-4 md:px-6
+- [ ] Tabs row: inline-flex gap-2 md:gap-4 h-[44px] overflow-x-auto no-scrollbar
+- [ ] Tab order: Capital Structure, PRE Calculator, Timeline, Compliance
+- [ ] Tab chip: rounded-full px-3 md:px-4 py-2 text-sm md:text-base whitespace-nowrap
+- [ ] A11y: role="tablist", roving tabindex, aria-selected
+- [ ] Sections: pt-6 pb-10 md:pt-8 md:pb-14 max-w-7xl mx-auto px-4 md:px-6
+- [ ] Headings: H2 clamp(18px, 2.6vw, 24px); H3 clamp(16px, 2.2vw, 20px)
+- [ ] Cards: rounded-2xl border shadow-sm p-4 md:p-6
+- [ ] Icon caps: w-6 h-6 md:w-7 md:h-7
+
+### 8. Capital Map Table
+- [ ] Add compact auto-sum table under timeline
+- [ ] Columns: Entity | Milestone | Date/Window | Amount (R$) | Cumulative (Entity) | Type | Status | Dependencies
+- [ ] Combined Total feeds Total Capital Required card
+
+### 9. Footer (Site-wide)
+- [ ] Wrapper: max-w-7xl mx-auto px-4 md:px-6
+- [ ] Border-t border-neutral-200/60 mt-8 md:mt-12
+- [ ] Row: py-3 md:py-4 text-xs text-neutral-500 flex flex-col md:flex-row justify-between gap-2
+- [ ] Left: © 2025 Coins.xyz
+- [ ] Center: Confidential executive dashboard — internal use only
+- [ ] Right: Updated {{timestamp_local}} • USD/BRL {{fx_rate}}
+- [ ] Remove large logo, shadows, gradients
+
+### 10. QA & Acceptance
+- [ ] No EFI/EMI strings remain (all IP)
+- [ ] No milestone shows Dec 2025 capital
+- [ ] Partial injections exist Jan–Feb 2026
+- [ ] VASP deadline clearly marked 01 Nov 2026 (Deadline)
+- [ ] Tabs never overlap hero/currency toggle at 360–430px
+- [ ] Executive totals equal computed sum of IP+VASP steps
+- [ ] Each milestone has anchor ID and Why line
+- [ ] CLS ≤ 0.02; keyboard-navigable tabs
