@@ -322,90 +322,66 @@ export default function Home() {
             <CardContent>
               <div className="space-y-6">
                 {/* Q4 2025 - Initial Injection */}
-                <div className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-32">
-                    <p className="text-sm font-semibold text-gray-900">Q4 2025</p>
-                    <p className="text-xs text-gray-600">Dec 2025</p>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-3 h-3 rounded-full mt-1 bg-green-500"></div>
-                  </div>
-                  <div className="flex-1 pb-4 border-l-2 border-gray-200 pl-4 -ml-1.5">
-                    <div className="flex items-center gap-2 mb-1">
+                <div className="bg-green-50 border-l-4 border-green-500 rounded-r-lg p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="text-xs text-gray-600">Q4 2025 • Dec 2025</p>
                       <p className="font-semibold text-gray-900">Initial Capital Injection</p>
-                      <Badge className="bg-green-100 text-green-700">R$ 5.000.000</Badge>
                     </div>
-                    <p className="text-sm text-gray-600 mb-2">First phase covering business plan preparation and initial compliance setup</p>
-                    <div className="flex gap-2 text-xs">
-                      <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3M</span>
-                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 2M</span>
-                    </div>
+                    <p className="text-lg font-bold text-green-600 font-display">R$ 5M</p>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-2">First phase covering business plan preparation and initial compliance setup</p>
+                  <div className="flex gap-2 text-xs">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3M</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 2M</span>
                   </div>
                 </div>
 
                 {/* Q2 2026 - Pre-Audit Injection */}
-                <div className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-32">
-                    <p className="text-sm font-semibold text-gray-900">Q2 2026</p>
-                    <p className="text-xs text-gray-600">May 2026</p>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-3 h-3 rounded-full mt-1 bg-blue-500"></div>
-                  </div>
-                  <div className="flex-1 pb-4 border-l-2 border-gray-200 pl-4 -ml-1.5">
-                    <div className="flex items-center gap-2 mb-1">
+                <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="text-xs text-gray-600">Q2 2026 • May 2026</p>
                       <p className="font-semibold text-gray-900">Pre-Audit Capital Injection</p>
-                      <Badge className="bg-blue-100 text-blue-700">R$ 8.000.000</Badge>
                     </div>
-                    <p className="text-sm text-gray-600 mb-2">Second phase before external audit for BCB verification</p>
-                    <div className="flex gap-2 text-xs">
-                      <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 5M</span>
-                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 3M</span>
-                    </div>
+                    <p className="text-lg font-bold text-blue-600 font-display">R$ 8M</p>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-2">Second phase before external audit for BCB verification</p>
+                  <div className="flex gap-2 text-xs">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 5M</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 3M</span>
                   </div>
                 </div>
 
                 {/* Q4 2026 - Authorization Filing Injection */}
-                <div className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-32">
-                    <p className="text-sm font-semibold text-gray-900">Q4 2026</p>
-                    <p className="text-xs text-gray-600">Nov 2026</p>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-3 h-3 rounded-full mt-1 bg-blue-500"></div>
-                  </div>
-                  <div className="flex-1 pb-4 border-l-2 border-gray-200 pl-4 -ml-1.5">
-                    <div className="flex items-center gap-2 mb-1">
+                <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="text-xs text-gray-600">Q4 2026 • Nov 2026</p>
                       <p className="font-semibold text-gray-900">Authorization Filing Injection</p>
-                      <Badge className="bg-blue-100 text-blue-700">R$ 6.000.000</Badge>
                     </div>
-                    <p className="text-sm text-gray-600 mb-2">Third phase for VASP & IP authorization filing with BCB</p>
-                    <div className="flex gap-2 text-xs">
-                      <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3.5M</span>
-                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 2.5M</span>
-                    </div>
+                    <p className="text-lg font-bold text-blue-600 font-display">R$ 6M</p>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-2">Third phase for VASP & IP authorization filing with BCB</p>
+                  <div className="flex gap-2 text-xs">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3.5M</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 2.5M</span>
                   </div>
                 </div>
 
                 {/* Q1 2028 - Final Compliance Injection */}
-                <div className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-32">
-                    <p className="text-sm font-semibold text-gray-900">Q1 2028</p>
-                    <p className="text-xs text-gray-600">Jan 2028</p>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-3 h-3 rounded-full mt-1 bg-gray-400"></div>
-                  </div>
-                  <div className="flex-1 pl-4 -ml-1.5">
-                    <div className="flex items-center gap-2 mb-1">
+                <div className="bg-purple-50 border-l-4 border-purple-500 rounded-r-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="text-xs text-gray-600">Q1 2028 • Jan 2028</p>
                       <p className="font-semibold text-gray-900">Final Compliance Injection</p>
-                      <Badge className="bg-purple-100 text-purple-700">R$ 4.200.000</Badge>
                     </div>
-                    <p className="text-sm text-gray-600 mb-2">Final phase to reach full compliance and operational readiness</p>
-                    <div className="flex gap-2 text-xs">
-                      <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 2.5M</span>
-                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 1.7M</span>
-                    </div>
+                    <p className="text-lg font-bold text-purple-600 font-display">R$ 4.2M</p>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-2">Final phase to reach full compliance and operational readiness</p>
+                  <div className="flex gap-2 text-xs">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 2.5M</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">EMI: R$ 1.7M</span>
                   </div>
                 </div>
               </div>

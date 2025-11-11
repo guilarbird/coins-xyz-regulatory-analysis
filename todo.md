@@ -142,3 +142,6 @@
 - [x] Fix Capital Injection Timeline summary layout (ugly on mobile)
 - [x] Redesign timeline summary section for better mobile readability
 - [x] Ensure all text is visible and not cut off
+- [x] Fix Capital Injection Timeline badges layout (values floating and cutting layout on mobile)
+- [x] Redesign timeline items to be more compact and mobile-friendly
+- [x] Move amount badges inline with titles instead of floating
