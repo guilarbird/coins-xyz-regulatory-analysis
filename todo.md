@@ -145,3 +145,7 @@
 - [x] Fix Capital Injection Timeline badges layout (values floating and cutting layout on mobile)
 - [x] Redesign timeline items to be more compact and mobile-friendly
 - [x] Move amount badges inline with titles instead of floating
+- [x] Fix Critical Path Milestones page white background (readability issue)
+- [x] Fix Team Updates page white background (readability issue)
+- [x] Ensure all cards are w-full and occupy 100% width on mobile
+- [x] Add colored backgrounds to all remaining white sections

@@ -412,14 +412,14 @@ export default function Home() {
             <h2 className="text-3xl font-bold font-display">Team & Key Milestones</h2>
           </div>
           
-          {/* Team Recognition */}
-          <Card className="w-full mb-8 border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white">
+          {/* Team Updates */}
+          <Card className="w-full border-2 border-purple-200 bg-purple-50">
             <CardHeader>
               <CardTitle className="font-display">Team Updates</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-start gap-3 bg-white rounded-lg p-4 border border-purple-100">
+                <div className="flex items-start gap-3 bg-purple-100 rounded-lg p-4 border border-purple-200">
                   <div className="bg-purple-600 text-white rounded-full p-2">
                     <Users className="w-5 h-5" />
                   </div>
@@ -430,7 +430,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3 bg-white rounded-lg p-4 border border-blue-100">
+                <div className="flex items-start gap-3 bg-blue-100 rounded-lg p-4 border border-blue-200">
                   <div className="bg-blue-600 text-white rounded-full p-2">
                     <Calendar className="w-5 h-5" />
                   </div>
@@ -445,7 +445,7 @@ export default function Home() {
           </Card>
           
           {/* Milestones Timeline */}
-          <Card className="w-full border-2 border-gray-200">
+          <Card className="w-full border-2 border-blue-200 bg-blue-50">
             <CardHeader>
               <CardTitle className="font-display">Critical Path Milestones</CardTitle>
               <CardDescription>Key dates and deliverables for dual-license authorization</CardDescription>
