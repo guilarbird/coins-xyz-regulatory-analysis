@@ -197,23 +197,26 @@
     --coins-green: #5DE828;
     --coins-blue: #0062F5;
     --coins-red: #ED452D;
+    --coins-pink: #FF006E;
+    --coins-cyan: #00D9FF;
   }
   
-  /* Coins.xyz Brand Gradients (Official Colors) */
+  /* Coins.xyz Brand Gradients - Reddish Variant (Primary) */
+  .gradient-reddish {
+    background: linear-gradient(135deg, var(--coins-red) 0%, var(--coins-pink) 25%, var(--coins-iris) 50%, var(--coins-blue) 75%, var(--coins-cyan) 100%);
+  }
+  
+  /* Alternative gradients */
   .gradient-iris-green {
-    background: linear-gradient(135deg, var(--coins-iris) 0%, var(--coins-blue) 33%, #06b6d4 66%, var(--coins-green) 100%);
+    background: linear-gradient(135deg, var(--coins-iris) 0%, var(--coins-blue) 33%, var(--coins-cyan) 66%, var(--coins-green) 100%);
   }
   
-  .gradient-iris-blue {
-    background: linear-gradient(135deg, var(--coins-blue) 0%, var(--coins-iris) 50%, var(--coins-blue) 100%);
+  .gradient-red-pink {
+    background: linear-gradient(135deg, var(--coins-red) 0%, var(--coins-pink) 100%);
   }
   
-  .gradient-green-blue {
-    background: linear-gradient(135deg, var(--coins-green) 0%, #06b6d4 50%, var(--coins-blue) 100%);
-  }
-  
-  .gradient-red-blue {
-    background: linear-gradient(135deg, var(--coins-red) 0%, var(--coins-iris) 33%, var(--coins-blue) 66%, #f97316 100%);
+  .gradient-pink-purple {
+    background: linear-gradient(135deg, var(--coins-pink) 0%, var(--coins-iris) 100%);
   }
 
   @media (min-width: 640px) {

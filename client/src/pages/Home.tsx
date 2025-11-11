@@ -5,6 +5,7 @@ import { ArrowRight, Building2, Users, Calendar, TrendingUp, FileText, Scale, Do
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { APP_LOGO } from "@/const";
+import RoadmapTimeline from "@/components/RoadmapTimeline";
 
 export default function Home() {
   const [currency, setCurrency] = useState<'BRL' | 'USD'>('BRL');
@@ -53,35 +54,40 @@ export default function Home() {
     }).format(value);
   };
 
-  const milestones = [
+  const milestones: Array<{
+    date: string;
+    title: string;
+    status: "completed" | "in-progress" | "upcoming" | "planned";
+    description: string;
+  }> = [
     {
       date: "Nov 13, 2025",
       title: "Joffre Asia CNPJ Registration",
-      status: "in-progress",
+      status: "in-progress" as const,
       description: "Formalization as controlling shareholder of Digital Markets & Global Trading"
     },
     {
       date: "Nov 17, 2025",
       title: "Bitso Controller Joins",
-      status: "upcoming",
+      status: "upcoming" as const,
       description: "Financial controller from Bitso joining to support compliance readiness"
     },
     {
       date: "Q4 2025",
       title: "Business Plan Completion",
-      status: "in-progress",
+      status: "in-progress" as const,
       description: "Comprehensive business plan aligned with BCB requirements for dual-license strategy"
     },
     {
       date: "Q1 2026",
       title: "External Audit",
-      status: "upcoming",
+      status: "upcoming" as const,
       description: "Capital verification and financial audit before authorization filing"
     },
     {
       date: "Nov 2026",
       title: "VASP & IP Authorization Filing",
-      status: "planned",
+      status: "planned" as const,
       description: "Submit authorization requests to BCB for both licenses"
     }
   ];
@@ -127,8 +133,11 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with Gradient */}
-      <section className="gradient-iris-green text-white py-16 md:py-24 relative overflow-hidden">
+      {/* Roadmap Timeline - Top Priority */}
+      <RoadmapTimeline milestones={milestones} />
+
+      {/* Hero Section with Reddish Gradient */}
+      <section className="gradient-reddish text-white py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img src="/vector-x.png" alt="" className="absolute top-10 right-10 w-32 h-32 rotate-12" />
           <img src="/vector-x.png" alt="" className="absolute bottom-10 left-10 w-24 h-24 -rotate-12" />
@@ -187,19 +196,27 @@ export default function Home() {
           <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white">
             <CardHeader>
               <CardTitle className="text-xl font-display">Joffre Ortigas Asia Holdings as Controller</CardTitle>
-              <CardDescription>Ongoing restructure with MCZ Law Firm support</CardDescription>
+              <CardDescription>
+                <strong>JO Asia</strong> is being formalized as the controlling shareholder of both Coins.xyz Digital Markets and Coins.xyz Global Trading, replacing Joffre BR Holdings. This restructure is being coordinated with MCZ Law Firm support.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
-                {/* Structure Diagram */}
-                <div className="bg-white rounded-xl p-6 border-2 border-dashed border-blue-300">
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="bg-gradient-iris-blue text-white px-6 py-4 rounded-xl font-display font-semibold text-lg">
-                      Joffre Ortigas Asia Holdings
+                {/* Structure Diagram - JO Asia Prominent */}
+                <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 border-2 border-gray-200">
+                  <div className="flex flex-col items-center gap-6">
+                    {/* JO Asia - Prominent Controller */}
+                    <div className="gradient-reddish text-white px-8 py-6 rounded-2xl font-display font-bold text-2xl shadow-lg border-4 border-white">
+                      <div className="text-center">
+                        <p className="text-sm font-normal opacity-90 mb-1">Controlling Entity</p>
+                        <p>Joffre Ortigas Asia Holdings</p>
+                      </div>
                     </div>
                     
-                    <div className="flex items-center gap-2">
-                      <div className="w-px h-12 bg-blue-300"></div>
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="w-1 h-16 bg-gradient-to-b from-red-500 to-blue-500 rounded-full"></div>
+                      <div className="text-xs font-semibold text-gray-500 bg-white px-3 py-1 rounded-full border-2 border-gray-200">Controls</div>
+                      <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-gray-300 rounded-full"></div>
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-6 w-full">

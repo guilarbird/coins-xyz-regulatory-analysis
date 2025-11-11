@@ -92,3 +92,17 @@
 - [x] Ajustar paleta de cores completa para cores oficiais da Coins.xyz
 - [x] Revisar brand guidelines para cores exatas (vermelho, azul, verde, roxo)
 - [x] Adicionar Joffre Ortigas Asia Holdings no topo do diagrama corporativo
+
+## Complete Brand Redesign (Nov 11, 2025)
+
+- [x] Shift color palette to approved reddish tones (Red #ED452D primary + supporting neutrals)
+- [x] Fix all content width issues - make hero, sections, and media full-width (no awkward gutters)
+- [x] Create horizontal visual roadmap component at the very top of homepage
+- [x] Roadmap must show past → upcoming milestones with dates, labels, and status badges
+- [x] Ensure roadmap is responsive and keyboard navigable
+- [x] Update corporate structure diagram to make JO Asia more prominent
+- [x] Ensure JO Asia is referenced clearly in copy
+- [x] Create color swatches documentation with usage notes
+- [x] Create QA checklist showing brand compliance and width consistency
+- [x] Test all breakpoints (desktop/tablet/mobile) for layout consistency
+- [x] Verify no off-brand colors, orphan spacing, or misaligned grids
