@@ -293,78 +293,127 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Detailed License Analysis - Elevated Section */}
+      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container max-w-7xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-2 font-display">Detailed License Analysis</h2>
+            <p className="text-gray-600">Explore specific requirements and compliance details for each license</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link href="/vasp">
+              <a>
+                <Card className="border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all cursor-pointer h-full bg-gradient-to-br from-blue-50 to-white">
+                  <CardHeader>
+                    <CardTitle className="flex items-center justify-between font-display">
+                      <span className="flex items-center gap-2">
+                        <Scale className="w-5 h-5 text-blue-600" />
+                        VASP Analysis
+                      </span>
+                      <ArrowRight className="w-5 h-5 text-blue-600" />
+                    </CardTitle>
+                    <CardDescription>Coins.xyz Digital Markets Ltda.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 mb-4">Virtual Asset Service Provider authorization under BCB Resolutions 519, 520, 521.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Link href="/vasp#capital"><a><Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 cursor-pointer">Capital Requirements</Badge></a></Link>
+                      <Link href="/vasp#pre"><a><Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 cursor-pointer">PRE Calculator</Badge></a></Link>
+                      <Link href="/vasp#compliance"><a><Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 cursor-pointer">Compliance Checklist</Badge></a></Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+            </Link>
+            
+            <Link href="/ip">
+              <a>
+                <Card className="border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all cursor-pointer h-full bg-gradient-to-br from-green-50 to-white">
+                  <CardHeader>
+                    <CardTitle className="flex items-center justify-between font-display">
+                      <span className="flex items-center gap-2">
+                        <Building2 className="w-5 h-5 text-green-600" />
+                        Payment Institution (IP)
+                      </span>
+                      <ArrowRight className="w-5 h-5 text-green-600" />
+                    </CardTitle>
+                    <CardDescription>Coins.xyz Global Trading Ltda.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 mb-4">Payment Institution authorization under BCB Resolution 517 & Joint Resolution 14/2025.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Link href="/ip#capital"><a><Badge className="bg-green-100 text-green-700 hover:bg-green-200 cursor-pointer">Capital Structure</Badge></a></Link>
+                      <Link href="/ip#gradual"><a><Badge className="bg-green-100 text-green-700 hover:bg-green-200 cursor-pointer">Gradual Implementation</Badge></a></Link>
+                      <Link href="/ip#requirements"><a><Badge className="bg-green-100 text-green-700 hover:bg-green-200 cursor-pointer">IP Requirements</Badge></a></Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+            </Link>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <Link href="/regulations">
+              <a>
+                <Button className="gap-2 bg-blue-600 hover:bg-blue-700 text-white">
+                  <FileText className="w-4 h-4" />
+                  View Complete Regulatory Framework
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Key Milestones Timeline - Section 2 */}
       <RoadmapTimeline milestones={milestones} />
 
-      {/* Corporate Restructure Section */}
-      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
+      {/* Corporate Restructure - Short */}
+      <section className="py-8 bg-gradient-to-br from-gray-50 to-white">
         <div className="container max-w-7xl">
-          <div className="flex items-center gap-3 mb-8">
-            <Building2 className="w-7 h-7 text-blue-600" />
-            <h2 className="text-3xl font-bold font-display">Corporate Restructure</h2>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <Building2 className="w-6 h-6 text-blue-600" />
+              <h2 className="text-2xl font-bold font-display">Corporate Restructure</h2>
+            </div>
+            <Link href="/corporate-structure">
+              <a>
+                <Button variant="outline" size="sm" className="gap-2">
+                  Open details
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
+            </Link>
           </div>
           
           <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white">
-            <CardHeader>
-              <CardTitle className="text-xl font-display">Joffre Ortigas Asia Holdings as Controller</CardTitle>
-              <CardDescription>
-                <strong>JO Asia</strong> is being formalized as the controlling shareholder of both Coins.xyz Digital Markets and Coins.xyz Global Trading, replacing Joffre BR Holdings. This restructure is being coordinated with MCZ Law Firm support.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                {/* Structure Diagram - JO Asia Prominent */}
-                <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 border-2 border-gray-200">
-                  <div className="flex flex-col items-center gap-6">
-                    {/* JO Asia - Prominent Controller */}
-                    <div className="gradient-reddish text-white px-8 py-6 rounded-2xl font-display font-bold text-2xl shadow-lg border-4 border-white">
-                      <div className="text-center">
-                        <p className="text-sm font-normal opacity-90 mb-1">Controlling Entity</p>
-                        <p>Joffre Ortigas Asia Holdings</p>
-                      </div>
+            <CardContent className="p-6">
+              <div className="flex gap-6 items-center">
+                {/* Compact diagram thumbnail */}
+                <div className="flex-shrink-0 bg-white rounded-lg p-4 border-2 border-gray-200 w-48">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="gradient-reddish text-white px-3 py-2 rounded-lg text-xs font-bold text-center">
+                      JO Asia Holdings
                     </div>
-                    
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="w-1 h-16 bg-gradient-to-b from-red-500 to-blue-500 rounded-full"></div>
-                      <div className="text-xs font-semibold text-gray-500 bg-white px-3 py-1 rounded-full border-2 border-gray-200">Controls</div>
-                      <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-gray-300 rounded-full"></div>
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-6 w-full">
-                      <div className="bg-blue-100 border-2 border-blue-300 rounded-xl p-4 text-center">
-                        <p className="font-semibold text-blue-900 mb-1 font-display">Coins.xyz Digital Markets Ltda.</p>
-                        <Badge className="bg-blue-600 text-white">VASP License</Badge>
-                        <p className="text-sm text-blue-700 mt-2">Virtual Asset Service Provider</p>
+                    <div className="w-0.5 h-6 bg-gray-300"></div>
+                    <div className="grid grid-cols-2 gap-2 w-full">
+                      <div className="bg-blue-100 border border-blue-300 rounded p-1 text-center">
+                        <p className="text-[10px] font-semibold text-blue-900">VASP</p>
                       </div>
-                      
-                      <div className="bg-green-100 border-2 border-green-300 rounded-xl p-4 text-center">
-                        <p className="font-semibold text-green-900 mb-1 font-display">Coins.xyz Global Trading Ltda.</p>
-                        <Badge className="bg-green-600 text-white">IP License</Badge>
-                        <p className="text-sm text-green-700 mt-2">Electronic Money Institution</p>
+                      <div className="bg-green-100 border border-green-300 rounded p-1 text-center">
+                        <p className="text-[10px] font-semibold text-green-900">IP</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                {/* Status Update */}
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3 gradient-warm border-2 border-red-200 rounded-lg p-4">
-                    <Clock className="w-5 h-5 text-red-600 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-gray-900">In Progress</p>
-                      <p className="text-sm text-gray-600">CNPJ registration of Joffre Asia with BCB</p>
-                      <p className="text-xs text-gray-500 mt-1">Expected: Nov 13, 2025</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3 gradient-cool border-2 border-blue-200 rounded-lg p-4">
-                    <FileText className="w-5 h-5 text-blue-600 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Bylaws Amendment</p>
-                      <p className="text-sm text-gray-600">Adding Joffre Asia as controller, removing Joffre BR Holdings</p>
-                      <p className="text-xs text-gray-500 mt-1">MCZ Law Firm coordination</p>
-                    </div>
-                  </div>
+                {/* Summary text */}
+                <div className="flex-1">
+                  <p className="text-gray-900 font-semibold mb-2">Joffre Ortigas Asia Holdings as Controller</p>
+                  <p className="text-sm text-gray-700 mb-2">JO Asia is being formalized as the controlling shareholder of both Coins.xyz Digital Markets (VASP) and Coins.xyz Global Trading (IP), replacing Joffre BR Holdings.</p>
+                  <p className="text-xs text-gray-600">CNPJ registration in progress (Expected: Nov 13, 2025) • Bylaws amendment coordinated with MCZ Law Firm</p>
                 </div>
               </div>
             </CardContent>
@@ -372,178 +421,97 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Combined Capital Injection */}
+      {/* Capital Injection Timeline - Compact */}
       <section className="py-12 bg-white">
         <div className="container max-w-7xl">
-          <div className="flex items-center gap-3 mb-8">
-            <DollarSign className="w-7 h-7 text-purple-600" />
-            <h2 className="text-3xl font-bold font-display">Combined Capital Injection</h2>
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <DollarSign className="w-6 h-6 text-purple-600" />
+                <h2 className="text-2xl font-bold font-display">Capital Injection Timeline</h2>
+              </div>
+              <p className="text-sm text-gray-600">Phased schedule aligned to audit & filing windows</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="px-3 py-1.5 text-xs font-semibold rounded-full bg-purple-600 text-white">Both</button>
+              <button className="px-3 py-1.5 text-xs font-semibold rounded-full border border-blue-300 text-blue-600 hover:bg-blue-50">IP</button>
+              <button className="px-3 py-1.5 text-xs font-semibold rounded-full border border-green-300 text-green-600 hover:bg-green-50">VASP</button>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-display">
-                  <Scale className="w-5 h-5 text-blue-600" />
-                  VASP Capital
-                </CardTitle>
-                <CardDescription>Coins.xyz Digital Markets</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-blue-600 mb-2 font-display">{formatCurrency(14000000)}</p>
-                <p className="text-sm text-gray-600">Virtual Asset Service Provider minimum capital requirement</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-white">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-display">
-                  <Building2 className="w-5 h-5 text-green-600" />
-                  IP Capital
-                </CardTitle>
-                <CardDescription>Coins.xyz Global Trading</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-green-600 mb-2 font-display">{formatCurrency(9200000)}</p>
-                <p className="text-sm text-gray-600">Payment Institution minimum capital requirement</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-display">
-                  <TrendingUp className="w-5 h-5 text-purple-600" />
-                  Total Required
-                </CardTitle>
-                <CardDescription>Combined dual-license strategy</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold text-purple-600 mb-2 font-display">{formatCurrency(23200000)}</p>
-                <p className="text-sm text-gray-600">Gradual implementation schedule until Jan 2028</p>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 font-display">
-                <Calendar className="w-5 h-5 text-purple-600" />
-                Capital Injection Timeline
-              </CardTitle>
-              <CardDescription>Phased implementation schedule coordinated with regulatory milestones</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                {/* Jan-Feb 2026 - Partial Injection (IP) */}
-                <div className="bg-green-50 border-l-4 border-green-500 rounded-r-lg p-4 mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <p className="text-xs text-gray-600">Q1 2026 • Jan–Feb 2026</p>
-                      <p className="font-semibold text-gray-900">Partial Capital Injection (IP)</p>
-                      <Badge className="bg-green-100 text-green-700 border-green-300 text-xs ml-2">Window</Badge>
+          {/* Compact Timeline Visualization */}
+          <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white" style={{maxHeight: '320px'}}>
+            <CardContent className="p-6">
+              {/* Compact horizontal timeline */}
+              <div className="relative">
+                {/* Timeline bar */}
+                <div className="absolute top-12 left-0 right-0 h-1 bg-purple-200"></div>
+                
+                {/* Milestones */}
+                <div className="grid grid-cols-5 gap-2 relative">
+                  {/* Jan-Feb 2026 (Both) */}
+                  <Link href="/ip#capital"><a className="flex flex-col items-center group cursor-pointer">
+                    <div className="w-4 h-4 rounded-full bg-purple-600 mb-2 group-hover:scale-125 transition-transform z-10"></div>
+                    <p className="text-xs font-semibold text-center mb-1">Jan–Feb 2026</p>
+                    <p className="text-xs text-gray-600 text-center mb-1">Partial Injection</p>
+                    <div className="flex flex-col gap-0.5">
+                      <Badge className="bg-green-100 text-green-700 text-[10px] px-1.5 py-0.5">IP: R$ 2.0M</Badge>
+                      <Badge className="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5">VASP: R$ 3.0M</Badge>
                     </div>
-                    <p className="text-lg font-bold text-green-600 font-display">R$ 2.0M</p>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">Meets fixed/cumulative capital for pre-audit checks and financial capacity before filing</p>
-                  <div className="flex gap-2 text-xs">
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 2.0M</span>
-                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 2.0M</span>
-                  </div>
-                </div>
-
-                {/* Jan-Feb 2026 - Partial Injection (VASP) */}
-                <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <p className="text-xs text-gray-600">Q1 2026 • Jan–Feb 2026</p>
-                      <p className="font-semibold text-gray-900">Partial Capital Injection (VASP)</p>
-                      <Badge className="bg-blue-100 text-blue-700 border-blue-300 text-xs ml-2">Window</Badge>
+                  </a></Link>
+                  
+                  {/* May 2026 (Both) */}
+                  <Link href="/vasp#capital"><a className="flex flex-col items-center group cursor-pointer">
+                    <div className="w-4 h-4 rounded-full bg-purple-600 mb-2 group-hover:scale-125 transition-transform z-10"></div>
+                    <p className="text-xs font-semibold text-center mb-1">01 May 2026</p>
+                    <p className="text-xs text-gray-600 text-center mb-1">Pre-Audit</p>
+                    <div className="flex flex-col gap-0.5">
+                      <Badge className="bg-green-100 text-green-700 text-[10px] px-1.5 py-0.5">IP: R$ 3.0M</Badge>
+                      <Badge className="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5">VASP: R$ 5.0M</Badge>
                     </div>
-                    <p className="text-lg font-bold text-blue-600 font-display">R$ 3.0M</p>
+                  </a></Link>
+                  
+                  {/* Jun-Sep 2026 (VASP Audit) */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-4 h-4 rounded-full bg-blue-400 mb-2"></div>
+                    <p className="text-xs font-semibold text-center mb-1">Jun–Sep 2026</p>
+                    <p className="text-xs text-gray-600 text-center mb-1">Audit Window</p>
+                    <Badge className="bg-orange-100 text-orange-700 text-[10px] px-1.5 py-0.5">VASP Only</Badge>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">Brings VASP to baseline so auditors can validate controls and PRE</p>
-                  <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3.0M</span>
-                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 3.0M</span>
-                  </div>
-                </div>
-
-                {/* 01 May 2026 - Pre-Audit Injection (IP) */}
-                <div className="bg-green-50 border-l-4 border-green-500 rounded-r-lg p-4 mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <p className="text-xs text-gray-600">Q2 2026 • 01 May 2026</p>
-                      <p className="font-semibold text-gray-900">Pre-Audit Capital Injection (IP)</p>
+                  
+                  {/* Nov 2026 (Both) */}
+                  <Link href="/vasp#compliance"><a className="flex flex-col items-center group cursor-pointer">
+                    <div className="w-4 h-4 rounded-full bg-purple-600 mb-2 group-hover:scale-125 transition-transform z-10"></div>
+                    <p className="text-xs font-semibold text-center mb-1">Nov 2026</p>
+                    <p className="text-xs text-gray-600 text-center mb-1">Authorization Filing</p>
+                    <div className="flex flex-col gap-0.5">
+                      <Badge className="bg-green-100 text-green-700 text-[10px] px-1.5 py-0.5">IP: R$ 2.5M</Badge>
+                      <Badge className="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5">VASP: R$ 3.5M</Badge>
                     </div>
-                    <p className="text-lg font-bold text-green-600 font-display">R$ 3.0M</p>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">Tops up to auditor-required cumulative amount at audit date</p>
-                  <div className="flex gap-2 text-xs">
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 3.0M</span>
-                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 5.0M</span>
-                  </div>
-                </div>
-
-                {/* 01 May 2026 - Pre-Audit Injection (VASP) */}
-                <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <p className="text-xs text-gray-600">Q2 2026 • 01 May 2026</p>
-                      <p className="font-semibold text-gray-900">Pre-Audit Capital Injection (VASP)</p>
+                  </a></Link>
+                  
+                  {/* Jan 2028 (Both) */}
+                  <Link href="/ip#requirements"><a className="flex flex-col items-center group cursor-pointer">
+                    <div className="w-4 h-4 rounded-full bg-purple-600 mb-2 group-hover:scale-125 transition-transform z-10"></div>
+                    <p className="text-xs font-semibold text-center mb-1">Jan 2028</p>
+                    <p className="text-xs text-gray-600 text-center mb-1">Final Compliance</p>
+                    <div className="flex flex-col gap-0.5">
+                      <Badge className="bg-green-100 text-green-700 text-[10px] px-1.5 py-0.5">IP: R$ 1.7M</Badge>
+                      <Badge className="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5">VASP: R$ 2.5M</Badge>
                     </div>
-                    <p className="text-lg font-bold text-blue-600 font-display">R$ 5.0M</p>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">Ensures VASP cumulative capital matches the level to be attested</p>
-                  <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 5.0M</span>
-                    <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Cumulative: R$ 8.0M</span>
-                  </div>
-                </div>
-
-                {/* Nov 2026 - Authorization Filing Injection (Both) */}
-                <div className="bg-purple-50 border-l-4 border-purple-500 rounded-r-lg p-4 mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <p className="text-xs text-gray-600">Q4 2026 • Nov 2026</p>
-                      <p className="font-semibold text-gray-900">Authorization Filing Injection (Both)</p>
-                    </div>
-                    <p className="text-lg font-bold text-purple-600 font-display">R$ 6.0M</p>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">Aligns paid-in capital to final PRE/exposure at filing, avoiding conditional approvals</p>
-                  <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 3.5M (Cumul: R$ 11.5M)</span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 2.5M (Cumul: R$ 7.5M)</span>
-                  </div>
-                </div>
-
-                {/* Jan 2028 - Final Compliance Injection (Both) */}
-                <div className="bg-purple-50 border-l-4 border-purple-500 rounded-r-lg p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <p className="text-xs text-gray-600">Q1 2028 • Jan 2028</p>
-                      <p className="font-semibold text-gray-900">Final Compliance Injection (Both)</p>
-                    </div>
-                    <p className="text-lg font-bold text-purple-600 font-display">R$ 4.2M</p>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-2">Post-authorization top-up to match initial operating scale and ensure year-one compliance</p>
-                  <div className="flex gap-2 text-xs">
-                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">VASP: R$ 2.5M (Cumul: R$ 14.0M)</span>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded">IP: R$ 1.7M (Cumul: R$ 9.2M)</span>
-                  </div>
+                  </a></Link>
                 </div>
               </div>
-
-              {/* Total Summary */}
-              <div className="mt-6 pt-6 border-t-2 border-purple-200">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-purple-50 rounded-lg p-4">
-                    <p className="text-sm text-gray-600 mb-1">Total Capital Injection</p>
-                    <p className="text-3xl font-bold text-purple-600 font-display">{formatCurrency(23200000)}</p>
-                  </div>
-                  <div className="bg-purple-50 rounded-lg p-4">
-                    <p className="text-sm text-gray-600 mb-1">Timeline</p>
-                    <p className="text-2xl font-semibold text-gray-900 font-display">Q4 2025 → Q1 2028</p>
-                  </div>
+              
+              {/* Summary footer */}
+              <div className="mt-6 pt-4 border-t border-purple-200 flex justify-between items-center">
+                <div>
+                  <p className="text-xs text-gray-600">Total Capital Required</p>
+                  <p className="text-xl font-bold text-purple-600 font-display">{formatCurrency(23200000)}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-gray-600">Timeline Span</p>
+                  <p className="text-lg font-semibold text-gray-900 font-display">Q1 2026 → Q1 2028</p>
                 </div>
               </div>
             </CardContent>
@@ -1031,79 +999,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Navigation to Detailed Analysis */}
-      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container max-w-7xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-2 font-display">Detailed License Analysis</h2>
-            <p className="text-gray-600">Explore specific requirements and compliance details for each license</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <Link href="/vasp">
-              <a>
-                <Card className="border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all cursor-pointer h-full bg-gradient-to-br from-blue-50 to-white">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between font-display">
-                      <span className="flex items-center gap-2">
-                        <Scale className="w-6 h-6 text-blue-600" />
-                        VASP Analysis
-                      </span>
-                      <ArrowRight className="w-6 h-6 text-blue-600" />
-                    </CardTitle>
-                    <CardDescription>Coins.xyz Digital Markets Ltda.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700 mb-4">Virtual Asset Service Provider authorization, capital structure (R$ 14M), compliance requirements, and regulatory framework under BCB Resolutions 519, 520, 521.</p>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge className="bg-blue-100 text-blue-700">Capital Requirements</Badge>
-                      <Badge className="bg-blue-100 text-blue-700">PRE Calculator</Badge>
-                      <Badge className="bg-blue-100 text-blue-700">Compliance Checklist</Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              </a>
-            </Link>
-            
-            <Link href="/ip">
-              <a>
-                <Card className="border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all cursor-pointer h-full bg-gradient-to-br from-green-50 to-white">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between font-display">
-                      <span className="flex items-center gap-2">
-                        <Building2 className="w-6 h-6 text-green-600" />
-                        Payment Institution (IP)
-                      </span>
-                      <ArrowRight className="w-6 h-6 text-green-600" />
-                    </CardTitle>
-                    <CardDescription>Coins.xyz Global Trading Ltda.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700 mb-4">Electronic Money Institution authorization, capital structure (R$ 9.2M), operational requirements, and regulatory framework under BCB Resolutions 517 & Joint Resolution 14/2025.</p>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge className="bg-green-100 text-green-700">Capital Structure</Badge>
-                      <Badge className="bg-green-100 text-green-700">Gradual Implementation</Badge>
-                      <Badge className="bg-green-100 text-green-700">IP Requirements</Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              </a>
-            </Link>
-          </div>
-          
-          <div className="mt-6 text-center">
-            <Link href="/regulations">
-              <a>
-                <Button variant="outline" className="gap-2">
-                  <FileText className="w-4 h-4" />
-                  View Complete Regulatory Framework
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </a>
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* Footer - Discreet */}
       <footer className="border-t border-neutral-200 dark:border-neutral-800 mt-8 md:mt-12">
