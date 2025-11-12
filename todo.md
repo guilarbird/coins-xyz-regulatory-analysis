@@ -451,3 +451,13 @@
 - [ ] Ensure no overlap with internal divs
 - [ ] Test on mobile (360px-430px) and desktop
 - [ ] Verify text wraps properly without overflow
+
+
+## Restructure Tab Navigation (Nov 12, 2025)
+
+- [ ] Create separate sticky navigation section for tabs in VASP page
+- [ ] Move tabs above content sections to prevent overlap
+- [ ] Add proper margin-bottom to tab navigation (mb-6)
+- [ ] Apply same structure to IP page
+- [ ] Ensure tabs are clearly separated from content
+- [ ] Test sticky behavior on scroll

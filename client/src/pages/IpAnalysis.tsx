@@ -125,12 +125,15 @@ export default function IpAnalysis() {
       <section className="py-12 bg-gradient-to-br from-green-50 to-white">
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-3 bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded-lg">
-              <TabsTrigger value="capital" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Capital Structure</TabsTrigger>
-              <TabsTrigger value="roadmap" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Roadmap</TabsTrigger>
-              <TabsTrigger value="timeline" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Timeline</TabsTrigger>
-              <TabsTrigger value="checklist" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Compliance</TabsTrigger>
-            </TabsList>
+            {/* Tab Navigation */}
+            <div className="sticky top-[64px] z-30 bg-white border-b shadow-sm -mx-4 px-4 py-4 mb-6">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-3 bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded-lg">
+                <TabsTrigger value="capital" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Capital Structure</TabsTrigger>
+                <TabsTrigger value="roadmap" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Roadmap</TabsTrigger>
+                <TabsTrigger value="timeline" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Timeline</TabsTrigger>
+                <TabsTrigger value="checklist" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Compliance</TabsTrigger>
+              </TabsList>
+            </div>
 
             {/* Capital Structure Tab */}
             <TabsContent value="capital" className="space-y-6">
