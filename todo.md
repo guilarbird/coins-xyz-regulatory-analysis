@@ -328,3 +328,43 @@
 - [ ] Run Lighthouse (Mobile): Accessibility ≥90, Best Practices ≥90
 - [ ] Verify no layout shift on currency toggle
 - [ ] Test keyboard nav and screen readers
+
+
+## UI/UX Structure Fix - Header/Hero/Tabs (Nov 12, 2025)
+
+### Phase 1: App Bar (Sticky Solid)
+- [ ] Change header background to solid bg-white/95 (remove gradient)
+- [ ] Fix logo truncation (min-w-0, flex grow space)
+- [ ] Convert currency toggle to segmented control (equal widths, text-sm)
+- [ ] Set proper height (h-14, 56px) and z-index (z-50)
+- [ ] Add subtle shadow (shadow-sm) and border-bottom
+
+### Phase 2: Hero Section (Gradient Non-Sticky)
+- [ ] Move gradient from header to hero section (below app bar)
+- [ ] Make hero non-sticky (remove position: sticky)
+- [ ] Add "Full Compliance" chip aligned left
+- [ ] Set padding: pt-6 pb-4 (desktop), pt-4 pb-3 (mobile)
+- [ ] Reduce gradient height (h-24–h-28)
+- [ ] Remove floating elements over hero edges
+
+### Phase 3: Section Tabs (Solid Surface)
+- [ ] Move tabs below hero on solid bg-white surface
+- [ ] Convert from filled pills to underline indicator style
+- [ ] Make tabs scrollable on mobile (overflow-x-auto)
+- [ ] Add underline animation on active tab (after: pseudo-element)
+- [ ] Set text-sm, medium weight, 24px hit area
+- [ ] Optional: make tabs sticky (top-14) with subtle shadow
+
+### Phase 4: Spacing & Hierarchy
+- [ ] App Bar → Hero: normal flow (no absolute positioning)
+- [ ] Hero → Tabs: mb-2 on hero, pt-2 pb-1 on tabs container
+- [ ] Tabs → Content: pt-2
+- [ ] Consistent 16–24px gutters (remove negative margins)
+
+### Phase 5: Testing
+- [ ] Test logo doesn't truncate on mobile
+- [ ] Test currency toggle is legible and accessible
+- [ ] Test tabs scroll smoothly on mobile
+- [ ] Test underline indicator animates correctly
+- [ ] Test no z-index conflicts or overlapping elements
+- [ ] Verify brand is clear, currency control legible, tabs anchored to calm surface
