@@ -413,3 +413,11 @@
 - [ ] Ensure tabs wrap properly on small screens (360-430px)
 - [ ] Test tab text doesn't truncate or overflow
 - [ ] Verify touch targets remain ≥44px
+
+
+## Fix Button Overlap in Tabs (Nov 12, 2025)
+
+- [ ] Add gap spacing to TabsList in VaspAnalysis.tsx (gap-2)
+- [ ] Add gap spacing to TabsList in IpAnalysis.tsx (gap-2)
+- [ ] Ensure buttons don't overlap on any screen size
+- [ ] Test on 360px, 430px, 768px, 1024px widths
