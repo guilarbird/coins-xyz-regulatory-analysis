@@ -282,3 +282,49 @@
 - [ ] Executive totals equal computed sum of IP+VASP steps
 - [ ] Each milestone has anchor ID and Why line
 - [ ] CLS ≤ 0.02; keyboard-navigable tabs
+
+
+## Cross-Page Consolidation (VASP & IP) - Mobile-first (Nov 12, 2025)
+
+### Phase 1: Shared Architecture
+- [ ] Create CurrencyProvider context with BRL/USD toggle and localStorage persistence
+- [ ] Create regulatoryConfig.ts with centralized data (capitalPlan.ip[], capitalPlan.vasp[], events[])
+- [ ] Create RegulatoryLayout component for /vasp and /ip routes
+- [ ] Move events.json data into regulatoryConfig.ts
+
+### Phase 2: Sticky Header
+- [ ] Implement sticky header with breadcrumb (Dashboard / VASP or Dashboard / IP)
+- [ ] Add currency segmented control (BRL/USD) with persistence
+- [ ] Reduce header/hero height ~35% on mobile using clamp()
+- [ ] Add URL param support ?ccy=usd|brl
+
+### Phase 3: Sticky Sub-menu Tabs
+- [ ] Create sticky chip tabs with scroll-snap and fade edges
+- [ ] Implement deep-links for VASP tabs (Overview, Capital, PRE Calculator, Compliance, Timeline, Framework)
+- [ ] Implement deep-links for IP tabs (Overview, Capital, Gradual Implementation, Requirements, Timeline, Framework)
+- [ ] Add cross-route toggle (VASP ↔ IP) with section preservation via alias map
+- [ ] Add A11y attributes (role="tablist", aria-controls, aria-current, touch targets ≥44×44)
+
+### Phase 4: Capital Injection Timeline
+- [ ] Create Stepper view for mobile (one card per phase, snap scrolling)
+- [ ] Create Swimlane view for desktop (3 lanes: events, IP, VASP)
+- [ ] Implement view toggle (Stepper ↔ Swimlane)
+- [ ] Add filter chips [Both][IP][VASP] with default to route entity
+- [ ] Move totals to module footer (IP total, VASP total, Grand Total)
+- [ ] Use Intl.NumberFormat('pt-BR') with compact suffixes (2.5M)
+
+### Phase 5: Mobile-first & Responsive
+- [ ] Ensure above the fold: title + currency + tabs visible (390×844)
+- [ ] Implement single-column stack on mobile for Corporate Restructure
+- [ ] Add diagram card with node drawers on tap
+- [ ] Remove floating edit pencil overlays
+- [ ] Test currency switch updates all values in <150ms
+
+### Phase 6: Testing & QA
+- [ ] Test cross-route toggle preserves section via alias map
+- [ ] Test currency persistence across routes
+- [ ] Test tab scrolling + active highlight
+- [ ] Test timeline filters + Stepper/Swimlane toggle
+- [ ] Run Lighthouse (Mobile): Accessibility ≥90, Best Practices ≥90
+- [ ] Verify no layout shift on currency toggle
+- [ ] Test keyboard nav and screen readers
