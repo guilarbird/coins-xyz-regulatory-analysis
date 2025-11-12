@@ -441,3 +441,13 @@
 - [ ] Ensure inactive buttons look clickable with proper styling
 - [ ] Maintain alternating colors for active states
 - [ ] Test hover states and transitions
+
+
+## Fix Tab Button Spacing (Nov 12, 2025)
+
+- [ ] Add min-height to TabsTrigger elements in VASP page (min-h-[44px])
+- [ ] Add proper padding to TabsTrigger elements (px-4 py-3)
+- [ ] Apply same spacing to IP page tabs
+- [ ] Ensure no overlap with internal divs
+- [ ] Test on mobile (360px-430px) and desktop
+- [ ] Verify text wraps properly without overflow

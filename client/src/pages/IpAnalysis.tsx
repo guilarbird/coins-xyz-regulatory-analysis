@@ -126,10 +126,10 @@ export default function IpAnalysis() {
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
             <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-3 bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded-lg">
-              <TabsTrigger value="capital" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all">Capital Structure</TabsTrigger>
-              <TabsTrigger value="roadmap" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all">Roadmap</TabsTrigger>
-              <TabsTrigger value="timeline" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all">Timeline</TabsTrigger>
-              <TabsTrigger value="checklist" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all">Compliance</TabsTrigger>
+              <TabsTrigger value="capital" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Capital Structure</TabsTrigger>
+              <TabsTrigger value="roadmap" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Roadmap</TabsTrigger>
+              <TabsTrigger value="timeline" className="bg-white/80 hover:bg-white data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Timeline</TabsTrigger>
+              <TabsTrigger value="checklist" className="bg-white/80 hover:bg-white data-[state=active]:bg-teal-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Compliance</TabsTrigger>
             </TabsList>
 
             {/* Capital Structure Tab */}
