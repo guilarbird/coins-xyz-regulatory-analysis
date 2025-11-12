@@ -373,19 +373,9 @@ export default function Home() {
       {/* Corporate Restructure - Short */}
       <section className="py-8 bg-gradient-to-br from-gray-50 to-white">
         <div className="container max-w-7xl">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <Building2 className="w-6 h-6 text-blue-600" />
-              <h2 className="text-2xl font-bold font-display">Corporate Restructure</h2>
-            </div>
-            <Link href="/corporate-structure">
-              <a>
-                <Button variant="outline" size="sm" className="gap-2">
-                  Open details
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </a>
-            </Link>
+          <div className="flex items-center gap-3 mb-4">
+            <Building2 className="w-6 h-6 text-blue-600" />
+            <h2 className="text-2xl font-bold font-display">Corporate Restructure</h2>
           </div>
           
           <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white">
