@@ -368,3 +368,39 @@
 - [ ] Test underline indicator animates correctly
 - [ ] Test no z-index conflicts or overlapping elements
 - [ ] Verify brand is clear, currency control legible, tabs anchored to calm surface
+
+
+## Tab Visibility & Hero KPI Improvements (Nov 12, 2025)
+
+### Phase 1: Simplify Header
+- [ ] Remove logo from inner pages (IP/VASP)
+- [ ] Keep only "← Back to Dashboard" (left) and BRL/USD toggle (right)
+- [ ] Header: h-14 (56px), solid bg-white/95, border-b
+
+### Phase 2: 3-Up Responsive KPI Grid
+- [ ] Create 3-chip grid in hero: Minimum Capital, Target Filing, Full Compliance
+- [ ] Use clamp() typography: text-[clamp(18px,3.2vw,28px)]
+- [ ] Short format on mobile (R$ 9.2M), full on desktop (R$ 9.200.000)
+- [ ] Grid: grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3
+- [ ] Chips: rounded-2xl, ring-1 ring-white/25, bg-white/10, px-4 py-3, min-w-[220px]
+- [ ] Two lines per chip: small label (text-xs uppercase) + large figure
+
+### Phase 3: Improve Tab Visibility
+- [ ] Ensure tabs are on solid white surface (not over gradient)
+- [ ] Increase text contrast: text-neutral-700, active: text-neutral-900
+- [ ] Make underline indicator more visible (h-0.5, bg-neutral-900)
+- [ ] Ensure tabs are scrollable horizontally on mobile
+- [ ] Add data-active attribute for better state management
+
+### Phase 4: Apply to Both Pages
+- [ ] IP Analysis: Minimum Capital (R$ 9.2M), Target Filing (Q4 2026), Full Compliance (Jan 2028)
+- [ ] VASP Analysis: Minimum Capital (R$ 14.0M), Authorization Deadline (Nov 1, 2026), Full Compliance (Jan 2028)
+- [ ] Use same hero gradient pattern for both
+- [ ] Consistent chip styling across both pages
+
+### Phase 5: Testing
+- [ ] Test no truncation at 360–400px width
+- [ ] Test chips wrap to 2/1 columns gracefully
+- [ ] Test headings never overlap header
+- [ ] Test tabs are readable and remain on screen when scrolling
+- [ ] Test numbers always readable with clamp() scaling
