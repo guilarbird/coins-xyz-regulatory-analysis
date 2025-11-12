@@ -288,4 +288,224 @@ export default function VaspAnalysis() {
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
                         <p className="text-xs text-gray-500 mt-1">5% PRE rate</p>
-(Content truncated due to size limit. Use page ranges or line ranges to read remaining content)
+                      </div>
+
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 mb-2 block">Other Crypto (R$)</label>
+                        <input
+                          type="number"
+                          value={custodyCrypto}
+                          onChange={(e) => setCustodyCrypto(Number(e.target.value))}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
+                        <p className="text-xs text-gray-500 mt-1">8% PRE rate</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-xl p-6">
+                      <h4 className="font-semibold mb-4 font-display">PRE Calculation Breakdown</h4>
+                      <div className="space-y-2 text-sm mb-4">
+                        <div className="flex justify-between">
+                          <span className="text-gray-700">BRL Stablecoins:</span>
+                          <span className="font-semibold">{formatCurrency(custodyBRL)} × 2% = {formatCurrency(preBRL)}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-700">USD Stablecoins:</span>
+                          <span className="font-semibold">{formatCurrency(custodyUSD)} × 5% = {formatCurrency(preUSD)}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-700">Other Crypto:</span>
+                          <span className="font-semibold">{formatCurrency(custodyCrypto)} × 8% = {formatCurrency(preCrypto)}</span>
+                        </div>
+                      </div>
+                      <div className="border-t-2 border-blue-300 pt-3">
+                        <div className="flex justify-between items-center">
+                          <span className="text-lg font-semibold font-display">Total Daily PRE:</span>
+                          <span className="text-3xl font-bold text-blue-600 font-display">{formatCurrency(totalPRE)}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        <strong>Important:</strong> This PRE must be calculated and reported daily before 6 AM. It is <strong>additional</strong> to the minimum capital requirement of R$14,000,000.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Timeline Tab */}
+            <TabsContent value="timeline" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-display">Capital Injection Timeline</CardTitle>
+                  <CardDescription>Gradual implementation schedule</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-8">
+                    <ResponsiveContainer width="100%" height={300}>
+                      <BarChart data={capitalData}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="date" />
+                        <YAxis />
+                        <Tooltip formatter={(value) => formatCurrency(Number(value))} />
+                        <Legend />
+                        <Bar dataKey="amount" fill="#3b82f6" name="Capital Required">
+                          {capitalData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={index === 2 ? '#10b981' : '#3b82f6'} />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+
+                  <div className="space-y-4">
+                    {capitalData.map((milestone, index) => (
+                      <div key={index} className="flex items-center gap-4 bg-white border-2 border-gray-200 rounded-lg p-4">
+                        <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg ${
+                          index === 0 ? 'bg-blue-500' : index === 1 ? 'bg-blue-600' : 'bg-green-600'
+                        }`}>
+                          {milestone.percentage}%
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-gray-900 font-display">{milestone.date}</p>
+                          <p className="text-2xl font-bold text-gray-900 font-display">{formatCurrency(milestone.amount)}</p>
+                        </div>
+                        <Badge variant="outline" className={
+                          index === 0 ? 'border-blue-500 text-blue-700' :
+                          index === 1 ? 'border-blue-600 text-blue-800' :
+                          'border-green-600 text-green-800'
+                        }>
+                          {milestone.label} Required
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Compliance Checklist Tab */}
+            <TabsContent value="checklist" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-display">VASP Authorization Checklist</CardTitle>
+                  <CardDescription>Key requirements for BCB authorization under Resolutions 519, 520 & 521</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="capital">
+                      <AccordionTrigger className="font-semibold">Capital Requirements</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Minimum paid-in capital: R$ 14,000,000 (gradual until Jan 2028)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Daily PRE calculation and reporting (before 6 AM)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <AlertCircle className="w-4 h-4 text-red-600 mt-0.5" />
+                            <span>External audit verification of capital (blocker)</span>
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="governance">
+                      <AccordionTrigger className="font-semibold">Corporate Governance</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start gap-2">
+                            <AlertCircle className="w-4 h-4 text-yellow-600 mt-0.5" />
+                            <span>Bylaws amendment (Joffre Asia as controller) - in progress</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Board of directors with qualified members</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Compliance officer designation</span>
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="policies">
+                      <AccordionTrigger className="font-semibold">Policies & Procedures</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>AML/CFT policy (PLD/FTP)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>KYC procedures</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Cybersecurity and data protection policy</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Custody and segregation procedures</span>
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="business">
+                      <AccordionTrigger className="font-semibold">Business Plan</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start gap-2">
+                            <AlertCircle className="w-4 h-4 text-red-600 mt-0.5" />
+                            <span><strong>Critical blocker:</strong> Comprehensive business plan aligned with BCB requirements</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Market analysis and competitive positioning</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Financial projections (3-5 years)</span>
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                    <AccordionItem value="tech">
+                      <AccordionTrigger className="font-semibold">Technology & Infrastructure</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Secure custody infrastructure (cold/hot wallets)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Transaction monitoring systems</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5" />
+                            <span>Disaster recovery and business continuity plans</span>
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+    </div>
+  );
+}
