@@ -241,10 +241,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Roadmap Timeline - Top Priority */}
-      <RoadmapTimeline milestones={milestones} />
-
-      {/* Hero Section with Reddish Gradient */}
+      {/* Executive Dashboard - Hero Section with Reddish Gradient */}
       <section className="gradient-reddish text-white py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img src="/vector-x.png" alt="" className="absolute top-10 right-10 w-32 h-32 rotate-12" />
@@ -295,6 +292,9 @@ export default function Home() {
             </div>
         </div>
       </section>
+
+      {/* Key Milestones Timeline - Section 2 */}
+      <RoadmapTimeline milestones={milestones} />
 
       {/* Corporate Restructure Section */}
       <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
