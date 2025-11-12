@@ -421,3 +421,14 @@
 - [ ] Add gap spacing to TabsList in IpAnalysis.tsx (gap-2)
 - [ ] Ensure buttons don't overlap on any screen size
 - [ ] Test on 360px, 430px, 768px, 1024px widths
+
+
+## VASP/IP Page UI Fixes (Nov 12, 2025)
+
+- [ ] Remove logo image from VASP page header (line 78)
+- [ ] Remove logo image from IP page header
+- [ ] Restructure tab buttons with alternating colors for better visibility
+- [ ] Add better spacing between tab buttons
+- [ ] Fix number overflow in KPI cards (use responsive typography)
+- [ ] Ensure all amounts fit within their containers
+- [ ] Test on mobile (360px-430px) to verify no overflow

@@ -74,8 +74,7 @@ export default function VaspAnalysis() {
                   <span className="text-sm font-medium">Back to Dashboard</span>
                 </a>
               </Link>
-              <div className="h-6 w-px bg-gray-300"></div>
-              <img src="/CoinsXYZ_HorizontalLogo_BlackWordmark.png" alt="Coins.xyz" className="h-7" />
+
             </div>
             
             <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1">
@@ -116,7 +115,7 @@ export default function VaspAnalysis() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
               <p className="text-sm text-white/80 mb-1">Minimum Capital</p>
-              <p className="text-2xl font-bold font-display">{formatCurrency(14000000)}</p>
+              <p className="text-xl md:text-2xl font-bold font-display break-words">{formatCurrency(14000000)}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
               <p className="text-sm text-white/80 mb-1">Target Filing</p>
@@ -134,11 +133,11 @@ export default function VaspAnalysis() {
       <section className="py-12 bg-gradient-to-br from-blue-50 to-white">
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-2 bg-white border p-2">
-              <TabsTrigger value="capital">Capital Structure</TabsTrigger>
-              <TabsTrigger value="pre">PRE Calculator</TabsTrigger>
-              <TabsTrigger value="timeline">Timeline</TabsTrigger>
-              <TabsTrigger value="checklist">Compliance</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 p-3 rounded-lg">
+              <TabsTrigger value="capital" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Capital Structure</TabsTrigger>
+              <TabsTrigger value="pre" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">PRE Calculator</TabsTrigger>
+              <TabsTrigger value="timeline" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Timeline</TabsTrigger>
+              <TabsTrigger value="checklist" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">Compliance</TabsTrigger>
             </TabsList>
 
             {/* Capital Structure Tab */}

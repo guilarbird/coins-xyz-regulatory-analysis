@@ -66,8 +66,7 @@ export default function IpAnalysis() {
                   <span className="text-sm font-medium">Back to Dashboard</span>
                 </a>
               </Link>
-              <div className="h-6 w-px bg-gray-300"></div>
-              <img src="/CoinsXYZ_HorizontalLogo_BlackWordmark.png" alt="Coins.xyz" className="h-7" />
+
             </div>
             
             <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1">
@@ -108,7 +107,7 @@ export default function IpAnalysis() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
               <p className="text-sm text-white/80 mb-1">Minimum Capital</p>
-              <p className="text-2xl font-bold font-display">{formatCurrency(9200000)}</p>
+              <p className="text-xl md:text-2xl font-bold font-display break-words">{formatCurrency(9200000)}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
               <p className="text-sm text-white/80 mb-1">Target Filing</p>
@@ -126,11 +125,11 @@ export default function IpAnalysis() {
       <section className="py-12 bg-gradient-to-br from-green-50 to-white">
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-2 bg-white border p-2">
-              <TabsTrigger value="capital">Capital Structure</TabsTrigger>
-              <TabsTrigger value="roadmap">Roadmap</TabsTrigger>
-              <TabsTrigger value="timeline">Timeline</TabsTrigger>
-              <TabsTrigger value="checklist">Compliance</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-3 bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded-lg">
+              <TabsTrigger value="capital" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">Capital Structure</TabsTrigger>
+              <TabsTrigger value="roadmap" className="data-[state=active]:bg-teal-600 data-[state=active]:text-white">Roadmap</TabsTrigger>
+              <TabsTrigger value="timeline" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">Timeline</TabsTrigger>
+              <TabsTrigger value="checklist" className="data-[state=active]:bg-teal-600 data-[state=active]:text-white">Compliance</TabsTrigger>
             </TabsList>
 
             {/* Capital Structure Tab */}
