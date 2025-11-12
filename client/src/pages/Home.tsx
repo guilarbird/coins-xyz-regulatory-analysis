@@ -267,7 +267,7 @@ export default function Home() {
               Joffre Ortigas Asia Holdings → Coins.xyz Digital Markets & Global Trading
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
                 <p className="text-sm text-white/80 mb-1">Total Capital Required</p>
                 <p className="text-2xl md:text-3xl font-bold font-display">{formatCurrency(23200000)}</p>
@@ -279,8 +279,13 @@ export default function Home() {
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-                <p className="text-sm text-white/80 mb-1">Target Filing</p>
-                <p className="text-2xl md:text-3xl font-bold font-display">Nov 2026</p>
+                <p className="text-sm text-white/80 mb-1">Target IP Filing</p>
+                <p className="text-xl md:text-2xl font-bold font-display">15 Mar 2026</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                <p className="text-sm text-white/80 mb-1">VASP Authorization Deadline</p>
+                <p className="text-xl md:text-2xl font-bold font-display">01 Nov 2026</p>
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
@@ -827,6 +832,134 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Capital Map Table */}
+            <div className="mt-12">
+              <div className="mb-6">
+                <h4 className="text-xl font-bold font-display mb-2">Capital Map Table</h4>
+                <p className="text-sm text-gray-600">Auto-calculated breakdown per entity and combined totals</p>
+              </div>
+              
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-md">
+                  <thead>
+                    <tr className="bg-gray-100 border-b-2 border-gray-300">
+                      <th className="text-left p-3 text-xs font-bold text-gray-700">Entity</th>
+                      <th className="text-left p-3 text-xs font-bold text-gray-700">Milestone</th>
+                      <th className="text-left p-3 text-xs font-bold text-gray-700">Date/Window</th>
+                      <th className="text-right p-3 text-xs font-bold text-gray-700">Amount (R$)</th>
+                      <th className="text-right p-3 text-xs font-bold text-gray-700">Cumulative (Entity)</th>
+                      <th className="text-center p-3 text-xs font-bold text-gray-700">Type</th>
+                      <th className="text-center p-3 text-xs font-bold text-gray-700">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm">
+                    {/* IP Thread */}
+                    <tr className="border-b border-gray-200 hover:bg-green-50">
+                      <td className="p-3"><Badge className="bg-green-100 text-green-700 text-xs">IP</Badge></td>
+                      <td className="p-3 text-gray-900">Partial Capital Injection</td>
+                      <td className="p-3 text-gray-600">Jan–Feb 2026</td>
+                      <td className="p-3 text-right font-bold text-green-600">R$ 2.000.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 2.000.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-100 text-purple-700 text-xs">Capital Injection</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-blue-100 text-blue-700 text-xs">Upcoming</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-green-50">
+                      <td className="p-3"><Badge className="bg-green-100 text-green-700 text-xs">IP</Badge></td>
+                      <td className="p-3 text-gray-900">IP Filing (Target)</td>
+                      <td className="p-3 text-gray-600">15 Mar 2026</td>
+                      <td className="p-3 text-right font-bold text-green-600">—</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 2.000.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-blue-100 text-blue-700 text-xs">Filing</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-blue-100 text-blue-700 text-xs">Upcoming</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-green-50">
+                      <td className="p-3"><Badge className="bg-green-100 text-green-700 text-xs">IP</Badge></td>
+                      <td className="p-3 text-gray-900">Pre-Audit Capital Injection</td>
+                      <td className="p-3 text-gray-600">01 May 2026</td>
+                      <td className="p-3 text-right font-bold text-green-600">R$ 3.000.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 5.000.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-100 text-purple-700 text-xs">Capital Injection</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-blue-100 text-blue-700 text-xs">Upcoming</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-green-50">
+                      <td className="p-3"><Badge className="bg-green-100 text-green-700 text-xs">IP</Badge></td>
+                      <td className="p-3 text-gray-900">Authorization Filing Injection</td>
+                      <td className="p-3 text-gray-600">Nov 2026</td>
+                      <td className="p-3 text-right font-bold text-green-600">R$ 2.500.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 7.500.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-100 text-purple-700 text-xs">Capital Injection</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-gray-100 text-gray-700 text-xs">Planned</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-green-50">
+                      <td className="p-3"><Badge className="bg-green-100 text-green-700 text-xs">IP</Badge></td>
+                      <td className="p-3 text-gray-900">Final Compliance Injection</td>
+                      <td className="p-3 text-gray-600">Jan 2028</td>
+                      <td className="p-3 text-right font-bold text-green-600">R$ 1.700.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 9.200.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-100 text-purple-700 text-xs">Capital Injection</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-gray-100 text-gray-700 text-xs">Planned</Badge></td>
+                    </tr>
+                    
+                    {/* VASP Thread */}
+                    <tr className="border-b border-gray-200 hover:bg-blue-50">
+                      <td className="p-3"><Badge className="bg-blue-100 text-blue-700 text-xs">VASP</Badge></td>
+                      <td className="p-3 text-gray-900">Partial Capital Injection</td>
+                      <td className="p-3 text-gray-600">Jan–Feb 2026</td>
+                      <td className="p-3 text-right font-bold text-blue-600">R$ 3.000.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 3.000.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-100 text-purple-700 text-xs">Capital Injection</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-blue-100 text-blue-700 text-xs">Upcoming</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-blue-50">
+                      <td className="p-3"><Badge className="bg-blue-100 text-blue-700 text-xs">VASP</Badge></td>
+                      <td className="p-3 text-gray-900">Pre-Audit Capital Injection</td>
+                      <td className="p-3 text-gray-600">01 May 2026</td>
+                      <td className="p-3 text-right font-bold text-blue-600">R$ 5.000.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 8.000.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-100 text-purple-700 text-xs">Capital Injection</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-blue-100 text-blue-700 text-xs">Upcoming</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-blue-50">
+                      <td className="p-3"><Badge className="bg-blue-100 text-blue-700 text-xs">VASP</Badge></td>
+                      <td className="p-3 text-gray-900">External Audit Window</td>
+                      <td className="p-3 text-gray-600">01 Jun – 30 Sep 2026</td>
+                      <td className="p-3 text-right font-bold text-blue-600">—</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 8.000.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-orange-100 text-orange-700 text-xs">Audit Window</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-blue-100 text-blue-700 text-xs">Upcoming</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-blue-50">
+                      <td className="p-3"><Badge className="bg-blue-100 text-blue-700 text-xs">VASP</Badge></td>
+                      <td className="p-3 text-gray-900">VASP Authorization Deadline</td>
+                      <td className="p-3 text-gray-600">01 Nov 2026</td>
+                      <td className="p-3 text-right font-bold text-blue-600">R$ 3.500.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 11.500.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-red-100 text-red-700 text-xs">Deadline</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-gray-100 text-gray-700 text-xs">Planned</Badge></td>
+                    </tr>
+                    <tr className="border-b border-gray-200 hover:bg-blue-50">
+                      <td className="p-3"><Badge className="bg-blue-100 text-blue-700 text-xs">VASP</Badge></td>
+                      <td className="p-3 text-gray-900">Final Compliance Injection</td>
+                      <td className="p-3 text-gray-600">Jan 2028</td>
+                      <td className="p-3 text-right font-bold text-blue-600">R$ 2.500.000</td>
+                      <td className="p-3 text-right font-semibold text-gray-700">R$ 14.000.000</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-100 text-purple-700 text-xs">Capital Injection</Badge></td>
+                      <td className="p-3 text-center"><Badge className="bg-gray-100 text-gray-700 text-xs">Planned</Badge></td>
+                    </tr>
+                    
+                    {/* Combined Total */}
+                    <tr className="bg-purple-100 border-t-2 border-purple-300">
+                      <td className="p-3" colSpan={3}><span className="font-bold text-purple-900">Combined Total (IP + VASP)</span></td>
+                      <td className="p-3 text-right font-bold text-purple-900">R$ 23.200.000</td>
+                      <td className="p-3 text-right font-bold text-purple-900">—</td>
+                      <td className="p-3 text-center"><Badge className="bg-purple-200 text-purple-900 text-xs">Total</Badge></td>
+                      <td className="p-3 text-center">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
             {/* Footer with controller info and legend */}
             <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6">
@@ -972,24 +1105,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-auto">
-        <div className="container max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-3">
-              <img src="/CoinsXYZ_HorizontalLogo_WhiteWordmark.png" alt="Coins.xyz" className="h-6" />
-              <div className="text-sm text-gray-400">
-                <p>© 2025 Coins.xyz. All rights reserved.</p>
-                <p className="text-xs mt-1">Confidential executive dashboard — For internal use only</p>
-              </div>
-            </div>
-            
-            <div className="text-sm text-gray-400 text-center md:text-right">
-              <p className="font-semibold text-white mb-1">
-                {lastUpdate || 'November 11, 2025'} • Exchange rate: 1 USD = {exchangeRate.toFixed(2)} BRL
-              </p>
-              <p className="text-xs">Live feed • Updates every 30 minutes</p>
-            </div>
+      {/* Footer - Discreet */}
+      <footer className="border-t border-neutral-200 dark:border-neutral-800 mt-8 md:mt-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="py-3 md:py-4 text-xs text-neutral-500 dark:text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-2">
+            <div>© 2025 Coins.xyz</div>
+            <div className="text-center">Confidential executive dashboard — internal use only</div>
+            <div className="text-right">Updated {lastUpdate || 'Nov 11, 2025'} • USD/BRL {exchangeRate.toFixed(2)}</div>
           </div>
         </div>
       </footer>
