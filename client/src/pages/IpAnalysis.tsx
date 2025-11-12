@@ -2,13 +2,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowLeft, DollarSign, TrendingUp, CheckCircle2, AlertCircle, Banknote, Calendar, Clock, Target } from "lucide-react";
+import { ArrowLeft, DollarSign, TrendingUp, CheckCircle2, AlertCircle, Banknote, Calendar, Clock, Target, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import { useTheme } from "@/contexts/ThemeContext";
 // Logo handled directly in JSX
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 
 export default function IpAnalysis() {
+  const { theme, toggleTheme } = useTheme();
   const [currency, setCurrency] = useState<'BRL' | 'USD'>('BRL');
   const [exchangeRate, setExchangeRate] = useState(5.00);
 
@@ -54,14 +56,14 @@ export default function IpAnalysis() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+      <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b dark:border-gray-700">
         <div className="container max-w-7xl">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
               <Link href="/">
-                <a className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+                <a className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
                   <ArrowLeft className="w-5 h-5" />
                   <span className="text-sm font-medium">Back to Dashboard</span>
                 </a>
@@ -69,13 +71,26 @@ export default function IpAnalysis() {
 
             </div>
             
-            <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-yellow-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-gray-600" />
+                )}
+              </button>
+              
+              <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 rounded-full p-1">
               <button
                 onClick={() => setCurrency('BRL')}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
                   currency === 'BRL' 
-                    ? 'bg-white text-gray-900 shadow-sm' 
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 shadow-sm' 
+                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100'
                 }`}
               >
                 BRL (R$)
@@ -84,12 +99,13 @@ export default function IpAnalysis() {
                 onClick={() => setCurrency('USD')}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
                   currency === 'USD' 
-                    ? 'bg-white text-gray-900 shadow-sm' 
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 shadow-sm' 
+                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100'
                 }`}
               >
                 USD ($)
               </button>
+            </div>
             </div>
           </div>
         </div>
@@ -144,33 +160,33 @@ export default function IpAnalysis() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
-                    <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
+                    <div className="bg-blue-50 dark:bg-blue-950 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="bg-blue-600 text-white rounded-lg p-2">
                           <DollarSign className="w-5 h-5" />
                         </div>
-                        <h3 className="font-semibold text-lg font-display">Initial Cost Component (PCI)</h3>
+                        <h3 className="font-semibold text-lg font-display text-gray-900 dark:text-gray-100">Initial Cost Component (PCI)</h3>
                       </div>
                       <p className="text-3xl font-bold text-blue-600 mb-2 font-display">{formatCurrency(1000000)}</p>
-                      <p className="text-sm text-gray-700">Baseline capital for initial structuring and setup.</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Baseline capital for initial structuring and setup.</p>
                     </div>
 
-                    <div className="bg-green-50 border-2 border-green-200 rounded-xl p-6">
+                    <div className="bg-green-50 dark:bg-green-950 border-2 border-green-200 dark:border-green-800 rounded-xl p-6">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="bg-green-600 text-white rounded-lg p-2">
                           <TrendingUp className="w-5 h-5" />
                         </div>
-                        <h3 className="font-semibold text-lg font-display">Technology Component (PTI)</h3>
+                        <h3 className="font-semibold text-lg font-display text-gray-900 dark:text-gray-100">Technology Component (PTI)</h3>
                       </div>
                       <p className="text-3xl font-bold text-green-600 mb-2 font-display">{formatCurrency(8200000)}</p>
-                      <p className="text-sm text-gray-700">Technology-intensive operations and infrastructure requirements.</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">Technology-intensive operations and infrastructure requirements.</p>
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-purple-50 to-blue-50 border-2 border-purple-200 rounded-xl p-6">
-                    <h3 className="font-semibold text-lg mb-2 font-display">Total Minimum Capital (CMin)</h3>
+                  <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 border-2 border-purple-200 dark:border-purple-800 rounded-xl p-6">
+                    <h3 className="font-semibold text-lg mb-2 font-display text-gray-900 dark:text-gray-100">Total Minimum Capital (CMin)</h3>
                     <p className="text-4xl font-bold text-purple-600 mb-2 font-display">{formatCurrency(9200000)}</p>
-                    <p className="text-sm text-gray-700">PCI (R$1,000,000) + PTI (R$8,200,000) = Required paid-in capital and minimum net equity</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">PCI (R$1,000,000) + PTI (R$8,200,000) = Required paid-in capital and minimum net equity</p>
                   </div>
                 </CardContent>
               </Card>
@@ -182,7 +198,7 @@ export default function IpAnalysis() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4">
+                    <div className="bg-blue-50 dark:bg-blue-950 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="bg-blue-600 text-white rounded-full p-1.5">
                           <DollarSign className="w-4 h-4" />
@@ -191,30 +207,30 @@ export default function IpAnalysis() {
                       </div>
                       <p className="text-2xl font-bold text-blue-600 mb-2 font-display">{formatCurrency(9200000)}</p>
                       <p className="text-sm text-gray-700 mb-3">One-time injection of paid-in capital required to establish the IP.</p>
-                      <ul className="text-xs text-gray-600 space-y-1">
+                      <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
                         <li>• Fully paid in cash</li>
                         <li>• Gradual: 25% → 50% → 100%</li>
                       </ul>
                     </div>
 
-                    <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4">
+                    <div className="bg-purple-50 dark:bg-purple-950 border-2 border-purple-200 dark:border-purple-800 rounded-xl p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="bg-purple-600 text-white rounded-full p-1.5">
                           <Banknote className="w-4 h-4" />
                         </div>
-                        <h4 className="font-semibold font-display">Idle Capital</h4>
+                        <h4 className="font-semibold font-display text-gray-900 dark:text-gray-100">Idle Capital</h4>
                       </div>
                       <p className="text-2xl font-bold text-purple-600 mb-2 font-display">{formatCurrency(9200000)}</p>
-                      <p className="text-sm text-gray-700 mb-3">Minimum net equity that must be maintained at all times.</p>
-                      <ul className="text-xs text-gray-600 space-y-1">
+                      <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">Minimum net equity that must be maintained at all times.</p>
+                      <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
                         <li>• Cannot be withdrawn</li>
                         <li>• Verified daily by BCB</li>
                       </ul>
                     </div>
                   </div>
 
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
-                    <p className="text-sm text-gray-700">
+                  <div className="bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mt-4">
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
                       <strong>Note:</strong> Unlike VASPs, Payment Institutions do not have variable PRE requirements based on custody. The capital requirement is fixed at R$ 9.2M.
                     </p>
                   </div>
@@ -235,12 +251,12 @@ export default function IpAnalysis() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6">
+                  <div className="bg-red-50 dark:bg-red-950 border-2 border-red-200 dark:border-red-800 rounded-xl p-4 mb-6">
                     <div className="flex items-center gap-3">
                       <Calendar className="w-6 h-6 text-red-600" />
                       <div>
-                        <p className="font-bold text-red-900 font-display">Critical Deadline: April 30, 2026</p>
-                        <p className="text-sm text-red-700">BACEN Protocol Submission via SISORF</p>
+                        <p className="font-bold text-red-900 dark:text-red-100 font-display">Critical Deadline: April 30, 2026</p>
+                        <p className="text-sm text-red-700 dark:text-red-300">BACEN Protocol Submission via SISORF</p>
                       </div>
                     </div>
                   </div>
@@ -252,7 +268,7 @@ export default function IpAnalysis() {
                         <h3 className="font-bold text-lg font-display">Phase 0: Immediate Actions</h3>
                       </div>
                       <div className="p-4">
-                        <div className="flex items-start gap-4 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <div className="flex items-start gap-4 bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
                           <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-2">
@@ -278,40 +294,40 @@ export default function IpAnalysis() {
                         <p className="text-sm text-blue-700">Nov 18 - Dec 20, 2025</p>
                       </div>
                       <div className="p-4 space-y-3">
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">S2: Transfer of Shares + Corporate Purpose</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">S2: Transfer of Shares + Corporate Purpose</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">3rd Contract Amendment (14 days)</p>
-                          <p className="text-xs text-gray-500">Legal/MCZ • CC 1.057; BCB 80/21</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Legal/MCZ • CC 1.057; BCB 80/21</p>
                         </div>
 
                         <div className="bg-orange-50 border border-orange-200 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">S3: Calculation of Minimum Capital (CMR)</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">S3: Calculation of Minimum Capital (CMR)</h4>
                             <Badge className="bg-orange-600 text-white">CRITICAL</Badge>
                           </div>
-                          <p className="text-xs text-gray-700 mb-1">MRC calculation per new methodology (EME + BaaS + PIX) — 5 days</p>
-                          <p className="text-xs text-gray-500">Financial • Resolution BCB 517/25</p>
+                          <p className="text-xs text-gray-700 dark:text-gray-300 mb-1">MRC calculation per new methodology (EME + BaaS + PIX) — 5 days</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Financial • Resolution BCB 517/25</p>
                         </div>
 
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">S4: Increase in Share Capital</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">S4: Increase in Share Capital</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">Value TBD (7 days)</p>
-                          <p className="text-xs text-gray-500">Legal/MCZ • CC 1.081-1.082</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Legal/MCZ • CC 1.081-1.082</p>
                         </div>
 
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">S5: Integration Increase</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">S5: Integration Increase</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">Capital stock contribution (4 days)</p>
-                          <p className="text-xs text-gray-500">Financial • Res. Conj. 14/25</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Financial • Res. Conj. 14/25</p>
                         </div>
                       </div>
                     </div>
@@ -323,58 +339,58 @@ export default function IpAnalysis() {
                         <p className="text-sm text-green-700">Jan 6 - Feb 20, 2026</p>
                       </div>
                       <div className="p-4 space-y-3">
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">S6: Election of Administrators</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">S6: Election of Administrators</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">AGE + documentation (7 days)</p>
-                          <p className="text-xs text-gray-500">Legal • IN 103/21 art. 6º XI</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Legal • IN 103/21 art. 6º XI</p>
                         </div>
 
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+                        <div className="bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">S7: Audit Selection</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">S7: Audit Selection</h4>
                             <Badge className="bg-red-600 text-white">BLOCKER</Badge>
                           </div>
-                          <p className="text-xs text-gray-700 mb-1">RFP + assessment (21 days)</p>
-                          <p className="text-xs text-gray-500">Financial • IN 103/21 art. 6º XVII</p>
+                          <p className="text-xs text-gray-700 dark:text-gray-300 mb-1">RFP + assessment (21 days)</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Financial • IN 103/21 art. 6º XVII</p>
                         </div>
 
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">S8: Hiring Audit</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">S8: Hiring Audit</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">Contract signing (7 days)</p>
-                          <p className="text-xs text-gray-500">Legal/Financial • NBC TA 210</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Legal/Financial • NBC TA 210</p>
                         </div>
 
-                        <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                        <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">P1: Policy Review</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">P1: Policy Review</h4>
                             <Badge className="bg-green-600 text-white">READY</Badge>
                           </div>
-                          <p className="text-xs text-gray-700 mb-1">Final validation (14 days)</p>
-                          <p className="text-xs text-gray-500">Compliance • Resolution BCB 80/21</p>
+                          <p className="text-xs text-gray-700 dark:text-gray-300 mb-1">Final validation (14 days)</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Compliance • Resolution BCB 80/21</p>
                         </div>
 
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+                        <div className="bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">P2: Business Plan</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">P2: Business Plan</h4>
                             <Badge className="bg-red-600 text-white">BLOCKER</Badge>
                           </div>
-                          <p className="text-xs text-gray-700 mb-1">Complete elaboration (45 days)</p>
-                          <p className="text-xs text-gray-500">Board of Directors • IN 103/21 art. 6º VI</p>
+                          <p className="text-xs text-gray-700 dark:text-gray-300 mb-1">Complete elaboration (45 days)</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Board of Directors • IN 103/21 art. 6º VI</p>
                         </div>
 
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">T1: Technical Validation Coins.ph</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">T1: Technical Validation Coins.ph</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">Documentation structure (14 days)</p>
-                          <p className="text-xs text-gray-500">CTO • Already operating</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">CTO • Already operating</p>
                         </div>
                       </div>
                     </div>
@@ -386,31 +402,31 @@ export default function IpAnalysis() {
                         <p className="text-sm text-purple-700">Apr 14 - Apr 30, 2026</p>
                       </div>
                       <div className="p-4 space-y-3">
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">F1: SISORF Consolidation</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">F1: SISORF Consolidation</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">Forms + attachments (10 days)</p>
-                          <p className="text-xs text-gray-500">Legal • IN BCB 103/21</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Legal • IN BCB 103/21</p>
                         </div>
 
-                        <div className="bg-white border border-gray-200 rounded-lg p-3">
+                        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">F2: Final Validation</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">F2: Final Validation</h4>
                             <Badge variant="outline">PENDING</Badge>
                           </div>
                           <p className="text-xs text-gray-600 mb-1">Compliance checklist (3 days)</p>
-                          <p className="text-xs text-gray-500">Compliance</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Compliance</p>
                         </div>
 
                         <div className="bg-purple-50 border-2 border-purple-300 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-sm font-display">F3: BACEN PROTOCOL 🎯</h4>
+                            <h4 className="font-semibold text-sm font-display text-gray-900 dark:text-gray-100">F3: BACEN PROTOCOL 🎯</h4>
                             <Badge className="bg-purple-600 text-white">DEADLINE</Badge>
                           </div>
-                          <p className="text-xs text-gray-700 mb-1">Upload SISORF (1 day) — April 30, 2026</p>
-                          <p className="text-xs text-gray-500">Legal • IN BCB 103/21</p>
+                          <p className="text-xs text-gray-700 dark:text-gray-300 mb-1">Upload SISORF (1 day) — April 30, 2026</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Legal • IN BCB 103/21</p>
                         </div>
                       </div>
                     </div>
