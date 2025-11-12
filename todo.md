@@ -465,9 +465,17 @@
 
 ## Separate Tab Buttons with Colored Backgrounds (Nov 12, 2025)
 
-- [ ] Give all VASP tab buttons solid colored backgrounds (not just active state)
-- [ ] Give all IP tab buttons solid colored backgrounds (not just active state)
-- [ ] Increase gap spacing between buttons (gap-4 instead of gap-3)
-- [ ] Remove white/80 backgrounds, use actual colors
-- [ ] Test visibility and separation on mobile
-- [ ] Ensure all buttons are clearly distinguishable
+- [x] Give all VASP tab buttons solid colored backgrounds (not just active state)
+- [x] Give all IP tab buttons solid colored backgrounds (not just active state)
+- [x] Increase gap spacing between buttons (gap-4 instead of gap-3)
+- [x] Remove white/80 backgrounds, use actual colors
+- [x] Test visibility and separation on mobile
+- [x] Ensure all buttons are clearly distinguishable
+
+
+## Increase Tab Wrapper Margin to Prevent Overlap (Nov 12, 2025)
+
+- [ ] Increase margin-bottom from mb-6 to mb-16 in VASP tab wrapper
+- [ ] Increase margin-bottom from mb-6 to mb-16 in IP tab wrapper
+- [ ] Test on mobile to verify no overlap with content below
+- [ ] Ensure "Capital Structure Overview" title is clearly separated from tabs

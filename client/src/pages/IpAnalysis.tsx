@@ -126,7 +126,7 @@ export default function IpAnalysis() {
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
             {/* Tab Navigation */}
-            <div className="sticky top-[64px] z-30 bg-white border-b shadow-sm -mx-4 px-4 py-4 mb-6">
+            <div className="sticky top-[64px] z-30 bg-white border-b shadow-sm -mx-4 px-4 py-4 mb-16">
               <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-4 bg-white p-4 rounded-lg">
                 <TabsTrigger value="capital" className="bg-green-500 hover:bg-green-600 data-[state=active]:bg-green-700 text-white transition-all min-h-[48px] px-4 py-3 rounded-lg shadow-sm">Capital Structure</TabsTrigger>
                 <TabsTrigger value="roadmap" className="bg-teal-500 hover:bg-teal-600 data-[state=active]:bg-teal-700 text-white transition-all min-h-[48px] px-4 py-3 rounded-lg shadow-sm">Roadmap</TabsTrigger>
