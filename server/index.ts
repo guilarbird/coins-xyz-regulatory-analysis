@@ -11,10 +11,7 @@ async function startServer() {
   const server = createServer(app);
 
   // Serve the Vite build output from the dist directory
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname)
-      : path.resolve(__dirname, "..", "dist");
+  const staticPath = path.resolve(__dirname, "..", "dist");
 
   app.use(
     express.static(staticPath, {
