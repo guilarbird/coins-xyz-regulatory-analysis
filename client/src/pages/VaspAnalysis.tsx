@@ -134,7 +134,7 @@ export default function VaspAnalysis() {
       <section className="py-12 bg-gradient-to-br from-blue-50 to-white">
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-4 bg-white border">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-white border">
               <TabsTrigger value="capital">Capital Structure</TabsTrigger>
               <TabsTrigger value="pre">PRE Calculator</TabsTrigger>
               <TabsTrigger value="timeline">Timeline</TabsTrigger>

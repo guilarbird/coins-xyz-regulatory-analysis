@@ -126,7 +126,7 @@ export default function IpAnalysis() {
       <section className="py-12 bg-gradient-to-br from-green-50 to-white">
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-4 bg-white border">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-white border">
               <TabsTrigger value="capital">Capital Structure</TabsTrigger>
               <TabsTrigger value="roadmap">Roadmap</TabsTrigger>
               <TabsTrigger value="timeline">Timeline</TabsTrigger>

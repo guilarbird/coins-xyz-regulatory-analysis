@@ -404,3 +404,12 @@
 - [ ] Test headings never overlap header
 - [ ] Test tabs are readable and remain on screen when scrolling
 - [ ] Test numbers always readable with clamp() scaling
+
+
+## Mobile View Fix - VASP/IP Tabs (Nov 12, 2025)
+
+- [ ] Fix TabsList in VaspAnalysis.tsx to be mobile-friendly (grid-cols-2 on mobile, grid-cols-4 on desktop)
+- [ ] Fix TabsList in IpAnalysis.tsx to match VASP structure
+- [ ] Ensure tabs wrap properly on small screens (360-430px)
+- [ ] Test tab text doesn't truncate or overflow
+- [ ] Verify touch targets remain ≥44px
