@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ip-2026-02",
+    "date": "2026-02-15",
+    "entity": "IP",
+    "amount_brl": 2000000,
+    "label": "Partial",
+    "purpose": "Pre-audit capacity",
+    "link": "/ip#partial-2026-02"
+  },
+  {
+    "id": "vasp-2026-02",
+    "date": "2026-02-20",
+    "entity": "VASP",
+    "amount_brl": 3000000,
+    "label": "Partial",
+    "purpose": "Baseline for PRE",
+    "link": "/vasp#partial-2026-02"
+  },
+  {
+    "id": "ip-2026-05-01",
+    "date": "2026-05-01",
+    "entity": "IP",
+    "amount_brl": 3000000,
+    "label": "Pre-Audit",
+    "purpose": "Top-up for audit",
+    "link": "/ip#preaudit-2026-05"
+  },
+  {
+    "id": "vasp-2026-05-01",
+    "date": "2026-05-01",
+    "entity": "VASP",
+    "amount_brl": 5000000,
+    "label": "Pre-Audit",
+    "purpose": "Top-up for audit",
+    "link": "/vasp#preaudit-2026-05"
+  },
+  {
+    "id": "both-2026-11",
+    "date": "2026-11-01",
+    "entity": "Both",
+    "amount_brl": 6000000,
+    "split": {
+      "IP": 2500000,
+      "VASP": 3500000
+    },
+    "label": "Filing Align",
+    "purpose": "Paid-in ≈ PRE at filing",
+    "link": "/ip#filing-2026-11"
+  },
+  {
+    "id": "both-2028-01",
+    "date": "2028-01-15",
+    "entity": "Both",
+    "amount_brl": 4200000,
+    "split": {
+      "IP": 1700000,
+      "VASP": 2500000
+    },
+    "label": "Final Top-Up",
+    "purpose": "Year-one compliance",
+    "link": "/ip#final-2028-01"
+  }
+]

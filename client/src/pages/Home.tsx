@@ -208,9 +208,6 @@ export default function Home() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
               <img src="/CoinsXYZ_HorizontalLogo_BlackWordmark.png" alt="Coins.xyz" className="h-8" />
-              <div className="hidden sm:block">
-                <p className="text-xs text-gray-500">Executive Dashboard</p>
-              </div>
             </div>
             
             <div className="flex items-center gap-4">
