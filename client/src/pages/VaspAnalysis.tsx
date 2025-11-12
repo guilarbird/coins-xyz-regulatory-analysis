@@ -134,10 +134,10 @@ export default function VaspAnalysis() {
         <div className="container max-w-7xl">
           <Tabs defaultValue="capital" className="space-y-6">
             <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 p-3 rounded-lg">
-              <TabsTrigger value="capital" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Capital Structure</TabsTrigger>
-              <TabsTrigger value="pre" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">PRE Calculator</TabsTrigger>
-              <TabsTrigger value="timeline" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Timeline</TabsTrigger>
-              <TabsTrigger value="checklist" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">Compliance</TabsTrigger>
+              <TabsTrigger value="capital" className="bg-white/80 hover:bg-white data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all">Capital Structure</TabsTrigger>
+              <TabsTrigger value="pre" className="bg-white/80 hover:bg-white data-[state=active]:bg-purple-600 data-[state=active]:text-white transition-all">PRE Calculator</TabsTrigger>
+              <TabsTrigger value="timeline" className="bg-white/80 hover:bg-white data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all">Timeline</TabsTrigger>
+              <TabsTrigger value="checklist" className="bg-white/80 hover:bg-white data-[state=active]:bg-purple-600 data-[state=active]:text-white transition-all">Compliance</TabsTrigger>
             </TabsList>
 
             {/* Capital Structure Tab */}

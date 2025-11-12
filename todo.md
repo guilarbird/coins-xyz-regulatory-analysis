@@ -432,3 +432,12 @@
 - [ ] Fix number overflow in KPI cards (use responsive typography)
 - [ ] Ensure all amounts fit within their containers
 - [ ] Test on mobile (360px-430px) to verify no overflow
+
+
+## Improve Tab Button Visibility (Nov 12, 2025)
+
+- [ ] Add background colors to inactive tab buttons in VASP page (bg-white/80)
+- [ ] Add background colors to inactive tab buttons in IP page (bg-white/80)
+- [ ] Ensure inactive buttons look clickable with proper styling
+- [ ] Maintain alternating colors for active states
+- [ ] Test hover states and transitions
