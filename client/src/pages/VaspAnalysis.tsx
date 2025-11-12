@@ -135,11 +135,11 @@ export default function VaspAnalysis() {
           <Tabs defaultValue="capital" className="space-y-6">
             {/* Tab Navigation */}
             <div className="sticky top-[64px] z-30 bg-white border-b shadow-sm -mx-4 px-4 py-4 mb-6">
-              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 p-3 rounded-lg">
-                <TabsTrigger value="capital" className="bg-white/80 hover:bg-white data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Capital Structure</TabsTrigger>
-                <TabsTrigger value="pre" className="bg-white/80 hover:bg-white data-[state=active]:bg-purple-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">PRE Calculator</TabsTrigger>
-                <TabsTrigger value="timeline" className="bg-white/80 hover:bg-white data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Timeline</TabsTrigger>
-                <TabsTrigger value="checklist" className="bg-white/80 hover:bg-white data-[state=active]:bg-purple-600 data-[state=active]:text-white transition-all min-h-[48px] px-4 py-3">Compliance</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-4 bg-white p-4 rounded-lg">
+                <TabsTrigger value="capital" className="bg-blue-500 hover:bg-blue-600 data-[state=active]:bg-blue-700 text-white transition-all min-h-[48px] px-4 py-3 rounded-lg shadow-sm">Capital Structure</TabsTrigger>
+                <TabsTrigger value="pre" className="bg-purple-500 hover:bg-purple-600 data-[state=active]:bg-purple-700 text-white transition-all min-h-[48px] px-4 py-3 rounded-lg shadow-sm">PRE Calculator</TabsTrigger>
+                <TabsTrigger value="timeline" className="bg-cyan-500 hover:bg-cyan-600 data-[state=active]:bg-cyan-700 text-white transition-all min-h-[48px] px-4 py-3 rounded-lg shadow-sm">Timeline</TabsTrigger>
+                <TabsTrigger value="checklist" className="bg-indigo-500 hover:bg-indigo-600 data-[state=active]:bg-indigo-700 text-white transition-all min-h-[48px] px-4 py-3 rounded-lg shadow-sm">Compliance</TabsTrigger>
               </TabsList>
             </div>
 

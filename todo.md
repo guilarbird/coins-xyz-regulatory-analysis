@@ -455,9 +455,19 @@
 
 ## Restructure Tab Navigation (Nov 12, 2025)
 
-- [ ] Create separate sticky navigation section for tabs in VASP page
-- [ ] Move tabs above content sections to prevent overlap
-- [ ] Add proper margin-bottom to tab navigation (mb-6)
-- [ ] Apply same structure to IP page
-- [ ] Ensure tabs are clearly separated from content
-- [ ] Test sticky behavior on scroll
+- [x] Create separate sticky navigation section for tabs in VASP page
+- [x] Move tabs above content sections to prevent overlap
+- [x] Add proper margin-bottom to tab navigation (mb-6)
+- [x] Apply same structure to IP page
+- [x] Ensure tabs are clearly separated from content
+- [x] Test sticky behavior on scroll
+
+
+## Separate Tab Buttons with Colored Backgrounds (Nov 12, 2025)
+
+- [ ] Give all VASP tab buttons solid colored backgrounds (not just active state)
+- [ ] Give all IP tab buttons solid colored backgrounds (not just active state)
+- [ ] Increase gap spacing between buttons (gap-4 instead of gap-3)
+- [ ] Remove white/80 backgrounds, use actual colors
+- [ ] Test visibility and separation on mobile
+- [ ] Ensure all buttons are clearly distinguishable
